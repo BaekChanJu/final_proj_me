@@ -27,13 +27,6 @@ public interface ReviewRepository extends JpaRepository<ReviewVO, Integer> {
    Page<ReviewVO> getReviewAndPaging(Pageable paging, String temp_ed_id);
    
 
-   //리뷰가져오기용 + 리뷰페이징
-   @Query(value = "SELECT *"
-         + " FROM review WHERE ed_id=?1",
-          countQuery = "SELECT count(*) FROM review  WHERE ed_id=?1",
-          nativeQuery=true)
-   Page<ReviewVO> getReviewAndPaging2(Pageable paging, String temp_ed_id);
-   
    
    
    //경호형 추가
