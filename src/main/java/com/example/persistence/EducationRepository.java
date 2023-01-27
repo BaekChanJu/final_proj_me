@@ -50,7 +50,7 @@ public interface EducationRepository extends CrudRepository<EducationVO, Integer
       
       
       
-      
+      //별점높은순 출력을 위해!
       @Query(value=" SELECT *  "
               + " FROM education "
               + " WHERE (lower(ed_title) LIKE CONCAT('%',?1,'%')"

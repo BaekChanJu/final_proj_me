@@ -9,21 +9,21 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.png" />
     <!-- CSS here -->
-    <link rel="stylesheet" href="../assets/css/preloader.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/css/meanmenu.css" />
-    <link rel="stylesheet" href="../assets/css/animate.min.css" />
-    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../assets/css/swiper-bundle.css" />
-    <link rel="stylesheet" href="../assets/css/backToTop.css" />
-    <link rel="stylesheet" href="../assets/css/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="../assets/css/fontAwesome5Pro.css" />
-    <link rel="stylesheet" href="../assets/css/elegantFont.css" />
-    <link rel="stylesheet" href="../assets/css/default.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/wishlist.css" />
+    <link rel="stylesheet" href="/assets/css/preloader.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/meanmenu.css" />
+    <link rel="stylesheet" href="/assets/css/animate.min.css" />
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="/assets/css/backToTop.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css" />
+    <link rel="stylesheet" href="/assets/css/elegantFont.css" />
+    <link rel="stylesheet" href="/assets/css/default.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/wishlist.css" />
     <link rel="stylesheet" href="/assets/css/onoff.css">
     
 
@@ -90,9 +90,9 @@
       <div id="loading-center">
         <div id="loading-center-absolute">
           <div class="loading-content">
-            <img class="loading-logo-text" src="../assets/img/logo/logo-text-2.png" alt="" />
+            <img class="loading-logo-text" src="/assets/img/logo/logo-text-2.png" alt="" />
             <div class="loading-stroke">
-              <img class="loading-logo-icon" src="../assets/img/logo/logo-icon.png" alt="" />
+              <img class="loading-logo-icon" src="/assets/img/logo/logo-icon.png" alt="" />
             </div>
           </div>
         </div>
@@ -318,7 +318,7 @@
               <li>
                 <div class="cartmini__thumb">
                   <a href="#">
-                    <img src="../assets/img/course/sm/cart-1.jpg" alt="" />
+                    <img src="/assets/img/course/sm/cart-1.jpg" alt="" />
                   </a>
                 </div>
                 <div class="cartmini__content">
@@ -337,7 +337,7 @@
               <li>
                 <div class="cartmini__thumb">
                   <a href="#">
-                    <img src="../assets/img/course/sm/cart-2.jpg" alt="" />
+                    <img src="/assets/img/course/sm/cart-2.jpg" alt="" />
                   </a>
                 </div>
                 <div class="cartmini__content">
@@ -356,7 +356,7 @@
               <li>
                 <div class="cartmini__thumb">
                   <a href="#">
-                    <img src="../assets/img/course/sm/cart-3.jpg" alt="" />
+                    <img src="/assets/img/course/sm/cart-3.jpg" alt="" />
                   </a>
                 </div>
                 <div class="cartmini__content">
@@ -402,7 +402,7 @@
         <div class="sidebar__content">
           <div class="logo mb-40">
             <a href="index">
-              <img src="../assets/img/logo/logo.png" alt="logo" />
+              <img src="/assets/img/logo/logo.png" alt="logo" />
             </a>
           </div>
           <div class="mobile-menu fix"></div>
@@ -440,7 +440,7 @@
       <!-- page title area start -->
       <section
         class="page__title-area page__title-height page__title-overlay d-flex align-items-center"
-        data-background="../assets/img/page-title/page-title-2.jpg"
+        data-background="/assets/img/page-title/page-title-2.jpg"
       >
         <div class="container">
           <div class="row">
@@ -460,130 +460,182 @@
       </section>
             <!-- 뒷 배경 그림들-->
   <div class="hero__shape">
-    <img class="hero-1-circle" src="../assets/img/shape/hero/hero-1-circle.png" alt="">
-    <img class="hero-1-circle-2" src="../assets/img/shape/hero/hero-1-circle-2.png" alt="">
-    <img class="hero-1-dot-2" src="../assets/img/shape/hero/hero-1-dot-2.png" alt="">
+    <img class="hero-1-circle" src="/assets/img/shape/hero/hero-1-circle.png" alt="">
+    <img class="hero-1-circle-2" src="/assets/img/shape/hero/hero-1-circle-2.png" alt="">
+    <img class="hero-1-dot-2" src="/assets/img/shape/hero/hero-1-dot-2.png" alt="">
  </div> 
       <!-- page title area end -->
 
+
+
+
+      
       <!-- 왼쪽 메뉴 표 Strat-->
       
       <section class="cart-area pt-100 pb-100">
-         <div class="accounthead">
-            <h4>회원정보 수정</h4>
-         </div>
-        <div class="container">
-         
-          <div class="row">
-            <div class="col-sm-3">
-              <div class="left-sidebar">
-                <ul
-                  class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-                  id="accordionSidebar"
-                >
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/academyList"
-                      data-toggle="collapse"
-                      data-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
-                    </a>
-                    <div
-                      id="collapseOne"
-                      class="collapse"
-                      aria-labelledby="headingUtilities"
-                      data-parent="#accordionSidebar"
-                    >
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/modify">회원정보 수정</a><br />
-                        <a class="collapse-item" href="/mypage/withdrawal">회원 탈퇴</a>
-                      </div>
-                    </div>
-                  </li>
+        <div class="accounthead">
+           <h4>회원정보 수정</h4>
+        </div>
+       <div class="container">
+        
+         <div class="row">
+           <div class="col-sm-3">
+             <div class="left-sidebar">
+               <ul
+                 class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+                 id="accordionSidebar"
+               >
 
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/tutorList"
-                      data-toggle="collapse"
-                      data-target="#collapseTwo"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo"
-                    >
-                      <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
-                    </a>
-                    <div
-                      id="collapseTwo"
-                      class="collapse"
-                      aria-labelledby="headingUtilities"
-                      data-parent="#accordionSidebar"
-                    >
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/myreview">리뷰관리</a><br />
-                        <a class="collapse-item" href="">1:1문의</a><br />
-                        <a class="collapse-item" href="">코딩게시판</a><br />
-                        <a class="collapse-item" href="/mypage/myquestion">솔직답변</a><br />
-                        <a class="collapse-item" href="">학원 탈퇴</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/tutorList"
-                      data-toggle="collapse"
-                      data-target="#collapseThree"
-                      aria-expanded="true"
-                      aria-controls="collapseThree"
-                    >
-                      <i class="fas fa-heart"></i> <span>WishList</span>
-                    </a>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
-                        <a class="collapse-item" href="/mypage/wishlistlec">관심강의리스트</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/lectureList.do"
-                      data-toggle="collapse"
-                      data-target="#collapseFour"
-                      aria-expanded="true"
-                      aria-controls="collapseFour"
-                    >
-                      <i class="fas fa-fw fa-desktop"></i> <span>나의 학습</span>
-                    </a>
-                    <div
-                      id="collapseFour"
-                      class="collapse"
-                      aria-labelledby="headingUtilities"
-                      data-parent="#accordionSidebar"
-                    >
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
-                        <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
-                      </div>
-                    </div>
-                  </li>
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/academyList"
+                     data-toggle="collapse"
+                     data-target="#collapseOne"
+                     aria-expanded="true"
+                     aria-controls="collapseOne"
+                   >
+                     <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
+                   </a>
+                   <div
+                     id="collapseOne"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/modify">회원정보 수정</a><br />
+                       <a class="collapse-item" href="/mypage/withdrawal">회원 탈퇴</a>
+                     </div>
+                   </div>
+                 </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="/mypage">
-                      <i class="fas fa-fw fa-table"></i> <span>튜터등록</span>
-                    </a>
-                  </li>
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/tutorList"
+                     data-toggle="collapse"
+                     data-target="#collapseTwo"
+                     aria-expanded="true"
+                     aria-controls="collapseTwo"
+                   >
+                     <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
+                   </a>
+                   <div
+                     id="collapseTwo"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/myreview">국비/부트 리뷰</a><br />
+                       <a class="collapse-item" href="/mypage/myreview2">화상/교육 리뷰</a><br />
+                       <a class="collapse-item" href="/mypage/honestAnswer">솔직 답변</a>
+                     </div>
+                   </div>
+                 </li>
 
-                  <!-- Nav Item - Pages Collapse Menu -->
-                </ul>
-              </div>
-            </div>
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/tutorList"
+                     data-toggle="collapse"
+                     data-target="#collapseThree"
+                     aria-expanded="true"
+                     aria-controls="collapseThree"
+                   >
+                     <i class="fas fa-heart"></i> <span>WishList</span>
+                   </a>
+                   <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
+                       <a class="collapse-item" href="/mypage/wishlistlec">관심강의리스트</a>
+                     </div>
+                   </div>
+                 </li>
 
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/lectureList.do"
+                     data-toggle="collapse"
+                     data-target="#collapseFour"
+                     aria-expanded="true"
+                     aria-controls="collapseFour"
+                   >
+                     <i class="fas fa-fw fa-desktop"></i> <span>화상 내역</span>
+                   </a>
+                   <div
+                     id="collapseFour"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
+                       <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
+                     </div>
+                   </div>
+                 </li>
+
+
+
+                 <li class="nav-item">
+                   <a 
+                   class="nav-link collapsed"
+                     href="admin/lectureList.do"
+                     data-toggle="collapse"
+                     data-target="#collapseFour2"
+                     aria-expanded="true"
+                     aria-controls="collapseFour2">
+                     <i class="fas fa-fw fa-table"></i> <span>등록관리</span>
+                   </a>
+                  
+                   <div
+                   id="collapseFour2"
+                   class="collapse"
+                   aria-labelledby="headingUtilities"
+                   data-parent="#accordionSidebar"
+                 >
+                 <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="/mypage/tutorInsert">선생님 등록</a><br />
+                   <a class="collapse-item" href="/mypage/educationInsert">학원 등록</a><br />
+                 </div>
+               </div>
+                 </li>
+                
+
+
+
+                 
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/lectureList.do"
+                     data-toggle="collapse"
+                     data-target="#collapseFive"
+                     aria-expanded="true"
+                     aria-controls="collapseFive"
+                   >
+                     <i class="fas fa-fw fa-desktop"></i> <span>튜터의 화상 내역</span>
+                   </a>
+                   <div
+                     id="collapseFive"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded give-border">
+                       <a class="collapse-item" href="/mypage/tutorReserve">예약 현황</a><br />
+                       <a class="collapse-item" href="/mypage/tutorBox">수업함</a>
+                     </div>
+                   </div>
+                 </li>
+
+                 <!-- Nav Item - Pages Collapse Menu -->
+               </ul>
+             </div>
+           </div>
             <!-- 메인 표-->
             
             <div class="col-sm-9">  
@@ -763,7 +815,7 @@
                   <div class="footer__widget-head mb-22">
                     <div class="footer__logo">
                       <a href="index">
-                        <img src="../assets/img/logo/logo-2.png" alt="" />
+                        <img src="/assets/img/logo/logo-2.png" alt="" />
                       </a>
                     </div>
                   </div>
@@ -871,22 +923,22 @@
     </footer>
     <!-- footer area end -->
     <!-- JS here -->
-    <script src="../assets/js/vendor/jquery-3.5.1.min.js"></script>
-    <script src="../assets/js/vendor/waypoints.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/jquery.meanmenu.js"></script>
-    <script src="../assets/js/swiper-bundle.min.js"></script>
-    <script src="../assets/js/owl.carousel.min.js"></script>
-    <script src="../assets/js/jquery.fancybox.min.js"></script>
-    <script src="../assets/js/isotope.pkgd.min.js"></script>
-    <script src="../assets/js/parallax.min.js"></script>
-    <script src="../assets/js/backToTop.js"></script>
-    <script src="../assets/js/jquery.counterup.min.js"></script>
-    <script src="../assets/js/ajax-form.js"></script>
-    <script src="../assets/js/wow.min.js"></script>
-    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/wishList.js"></script>
+    <script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="/assets/js/vendor/waypoints.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/jquery.meanmenu.js"></script>
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/jquery.fancybox.min.js"></script>
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+    <script src="/assets/js/parallax.min.js"></script>
+    <script src="/assets/js/backToTop.js"></script>
+    <script src="/assets/js/jquery.counterup.min.js"></script>
+    <script src="/assets/js/ajax-form.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/wishList.js"></script>
 
     <!--0106 좋아요 버튼 관련 ajax-->
     <!-- Bootstrap core JavaScript-->

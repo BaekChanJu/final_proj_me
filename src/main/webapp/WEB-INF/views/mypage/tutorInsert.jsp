@@ -458,136 +458,174 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
       </section>
       <!-- page title area end -->
 
-      <!-- 위시리스트 Strat-->
+      <!-- 왼쪽 메뉴 표 Strat-->
       
       <section class="cart-area pt-100 pb-100">
-         <div class="accounthead">
-            <h4>선생님 등록</h4>
-         </div>
-        <div class="container">
-         
-          <div class="row">
-            
-            <div class="col-sm-3">
-              <div class="left-sidebar">
-                <ul
-                  class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-                  id="accordionSidebar"
-                >
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/academyList"
-                      data-toggle="collapse"
-                      data-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
-                    </a>
-                    <div
-                      id="collapseOne"
-                      class="collapse"
-                      aria-labelledby="headingUtilities"
-                      data-parent="#accordionSidebar"
-                    >
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/modify">회원정보 수정</a><br />
-                        <a class="collapse-item" href="/mypage/withdrawal">회원 탈퇴</a>
-                      </div>
-                    </div>
-                  </li>
+        <div class="accounthead">
+           <h4>회원정보 수정</h4>
+        </div>
+       <div class="container">
+        
+         <div class="row">
+           <div class="col-sm-3">
+             <div class="left-sidebar">
+               <ul
+                 class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+                 id="accordionSidebar"
+               >
 
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/tutorList"
-                      data-toggle="collapse"
-                      data-target="#collapseTwo"
-                      aria-expanded="true"
-                      aria-controls="collapseTwo"
-                    >
-                      <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
-                    </a>
-                    <div
-                      id="collapseTwo"
-                      class="collapse"
-                      aria-labelledby="headingUtilities"
-                      data-parent="#accordionSidebar"
-                    >
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/myreview">리뷰관리</a><br />
-                        <a class="collapse-item" href="">1:1문의</a><br />
-                        <a class="collapse-item" href="">코딩게시판</a><br />
-                        <a class="collapse-item" href="/mypage/myquestion">솔직답변</a><br />
-                        <a class="collapse-item" href="">학원 탈퇴</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/tutorList"
-                      data-toggle="collapse"
-                      data-target="#collapseThree"
-                      aria-expanded="true"
-                      aria-controls="collapseThree"
-                    >
-                      <i class="fas fa-heart"></i> <span>WishList</span>
-                    </a>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
-                        <a class="collapse-item" href="/mypage/wishlistlec">관심강의리스트</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link collapsed"
-                      href="admin/lectureList.do"
-                      data-toggle="collapse"
-                      data-target="#collapseFour"
-                      aria-expanded="true"
-                      aria-controls="collapseFour"
-                    >
-                      <i class="fas fa-fw fa-desktop"></i> <span>나의 학습</span>
-                    </a>
-                    <div
-                      id="collapseFour"
-                      class="collapse"
-                      aria-labelledby="headingUtilities"
-                      data-parent="#accordionSidebar"
-                    >
-                      <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
-                        <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
-                      </div>
-                    </div>
-                  </li>
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/academyList"
+                     data-toggle="collapse"
+                     data-target="#collapseOne"
+                     aria-expanded="true"
+                     aria-controls="collapseOne"
+                   >
+                     <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
+                   </a>
+                   <div
+                     id="collapseOne"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/modify">회원정보 수정</a><br />
+                       <a class="collapse-item" href="/mypage/withdrawal">회원 탈퇴</a>
+                     </div>
+                   </div>
+                 </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="/mypage/tutorInsert">
-                      <i class="fas fa-fw fa-table"></i> <span>튜터등록</span>
-                    </a>
-                  </li>
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/tutorList"
+                     data-toggle="collapse"
+                     data-target="#collapseTwo"
+                     aria-expanded="true"
+                     aria-controls="collapseTwo"
+                   >
+                     <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
+                   </a>
+                   <div
+                     id="collapseTwo"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/myreview">국비/부트 리뷰</a><br />
+                       <a class="collapse-item" href="/mypage/myquestion">화상/교육 리뷰</a><br />
+                       <a class="collapse-item" href="/mypage/honestAnswer">솔직 답변</a>
+                     </div>
+                   </div>
+                 </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="/mypage/educationInsert">
-                      <i class="fas fa-fw fa-table"></i> <span>학원등록</span>
-                    </a>
-                  </li>
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/tutorList"
+                     data-toggle="collapse"
+                     data-target="#collapseThree"
+                     aria-expanded="true"
+                     aria-controls="collapseThree"
+                   >
+                     <i class="fas fa-heart"></i> <span>WishList</span>
+                   </a>
+                   <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
+                       <a class="collapse-item" href="/mypage/wishlistlec">관심강의리스트</a>
+                     </div>
+                   </div>
+                 </li>
 
-                  <!-- Nav Item - Pages Collapse Menu -->
-                </ul>
-              </div>
-            </div>
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/lectureList.do"
+                     data-toggle="collapse"
+                     data-target="#collapseFour"
+                     aria-expanded="true"
+                     aria-controls="collapseFour"
+                   >
+                     <i class="fas fa-fw fa-desktop"></i> <span>화상 내역</span>
+                   </a>
+                   <div
+                     id="collapseFour"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded">
+                       <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
+                       <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
+                     </div>
+                   </div>
+                 </li>
 
 
 
+                 <li class="nav-item">
+                   <a 
+                   class="nav-link collapsed"
+                     href="admin/lectureList.do"
+                     data-toggle="collapse"
+                     data-target="#collapseFour2"
+                     aria-expanded="true"
+                     aria-controls="collapseFour2">
+                     <i class="fas fa-fw fa-table"></i> <span>등록관리</span>
+                   </a>
+                  
+                   <div
+                   id="collapseFour2"
+                   class="collapse"
+                   aria-labelledby="headingUtilities"
+                   data-parent="#accordionSidebar"
+                 >
+                 <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="/mypage/tutorInsert">선생님 등록</a><br />
+                   <a class="collapse-item" href="/mypage/educationInsert">학원 등록</a><br />
+                 </div>
+               </div>
+                 </li>
+                
 
 
 
+                 
+                 <li class="nav-item">
+                   <a
+                     class="nav-link collapsed"
+                     href="admin/lectureList.do"
+                     data-toggle="collapse"
+                     data-target="#collapseFive"
+                     aria-expanded="true"
+                     aria-controls="collapseFive"
+                   >
+                     <i class="fas fa-fw fa-desktop"></i> <span>튜터의 화상 내역</span>
+                   </a>
+                   <div
+                     id="collapseFive"
+                     class="collapse"
+                     aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar"
+                   >
+                     <div class="bg-white py-2 collapse-inner rounded give-border">
+                       <a class="collapse-item" href="/mypage/tutorReserve">예약 현황</a><br />
+                       <a class="collapse-item" href="/mypage/tutorBox">수업함</a>
+                     </div>
+                   </div>
+                 </li>
+
+                 <!-- Nav Item - Pages Collapse Menu -->
+               </ul>
+             </div>
+           </div>
+
+           
               <!--스승 등록 폼-->
             <div class="col-sm-9">
            

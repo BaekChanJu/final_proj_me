@@ -16,11 +16,18 @@ public interface LectureRepository extends CrudRepository<LectureVO, Integer> {
 	//전체검색을 페이징
 	List<LectureVO> findAll();
 
+	
+	
+	
+	
+	//화상부분임
 	//0106 찬주
 	//마리아디비는 문자열 연결할때 CONCAT을 사용합시다!
 	//카테고리별, 메인에서 전문검색, 셀렉박스 선택용 검색 
 	//네이티브 쿼리로 구현해서 페이징까지 완성된 최종본
 	//AllSearchAndPagingQuery 라는 이름은 제가 만든것입니다 이해하기 쉽게~
+	
+	//일반출력 과 + 최신순정렬
 	@Query(value=" SELECT *  "
 			+ " FROM vchat_class "
 			+ " WHERE lower(vc_title) LIKE CONCAT('%',?1,'%') "
@@ -39,8 +46,12 @@ public interface LectureRepository extends CrudRepository<LectureVO, Integer> {
 
 	
 	
-
-	//별점
+	
+	
+	
+	
+	//화상부분임
+	//별점높은순 출력
 	@Query(value=" SELECT *  "
 			+ " FROM vchat_class "
 			+ " WHERE lower(vc_title) LIKE CONCAT('%',?1,'%') "

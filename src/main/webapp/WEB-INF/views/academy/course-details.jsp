@@ -550,64 +550,58 @@
          </div>
 
 
+
+
+
          <div class="course__sidebar-widget-2 white-bg mb-20">
             <div class="course__sidebar-course">
-               <h3 class="course__sidebar-title">Recommend</h3>
+               <h3 class="course__sidebar-title">Recommend Education</h3>
                <ul>
                   <li>
                      <div class="course__sm d-flex align-items-center mb-30">
 
                         <div class="course__sm-thumb mr-20">
-                           <a href="course-details?edId=${education.edId=127}">
-                              <img src="/assets/img/course/${education.edPic='127.PNG'}" alt=""> 
+                           <a href="course-sidebar?keywords=${education.edName}">
+                              <img src="/assets/img/course/${education.edPic}" alt=""> 
                            </a>
                         </div>
 
                         <div class="course__sm-content">
                          
-                           <h5>항해개발자백엔드</h5>
+                           <h5>${education.edName}</h5>
                            <div class="course__sm-price">
-                              <span>${education.edPrice}</span>
+                              <span>이 학원이 더 궁금해?!</span>
                            </div>
                         </div>
                      </div>
                   </li>
+
+                   <li>
+                     <h3 class="course__sidebar-title">Event</h3>
+                  </li>
+
                   <li>
-                     <div class="course__sm d-flex align-items-center mb-30">
-
-                        <div class="course__sm-thumb mr-20">
-                           <a href="course-details?edId=${education.edId=129}">
-                              <img src="/assets/img/course/${education.edPic='129.PNG'}" alt="">
-                           </a>
-                        </div>
-
-                        <div class="course__sm-content">
+                     <div class="course__sm-content">
                          
-                           <h5>Java·AI[18기]</h5>
-                           <div class="course__sm-price">
-                              <span>${education.edPrice}</span>
-                           </div>
+                      
+                        <div class="course__sm-price">
+                          
+                           <h3>코클에서 쉽게확인하기!</h3>
+                             
+                          
                         </div>
                      </div>
-                  </li>
-                  <li>
-                     <div class="course__sm d-flex align-items-center mb-30">
 
-                        <div class="course__sm-thumb mr-20">
-                           <a href="course-details?edId=${education.edId=100}">
-                              <img src="/assets/img/course/${education.edPic='132.PNG'}" alt="">
-                           </a>
-                        </div>
 
-                        <div class="course__sm-content">
-                         
-                           <h5>백엔드개발자취업캠프</h5>
-                           <div class="course__sm-price">
-                              <span>${education.edPrice}</span>
-                           </div>
-                        </div>
-                     </div>
+                     <img src="/assets/img/event2.png" alt=""> 
+
+                     
                   </li>
+                  
+
+
+                  
+                 
                </ul>
             </div>
          </div>
@@ -661,59 +655,15 @@
                                           <li> <i class="icon_check"></i> 3) 실시간 리뷰로 편하게 비교하세요</li>
                                        </ul>
                                     </div>
-                                    <div class="course__instructor mb-45">
-                                       <h3>Code a clock 추천학원</h3>
-                                       <div class="course__instructor-wrapper d-md-flex align-items-center">
-
-
-                                          <div class="course__instructor-item d-flex align-items-center mr-70">
-                                             <div class="course__instructor-thumb mr-20">
-                                               
-                                                <!-- 우리가 추천하는 수업 넣어주면 됌-->
-                                              <a href="course-details?edId=${education.edId=127}">
-                                                <img src="/assets/img/course/${education.edPic='127.PNG'}" alt=""> 
-                                              </a>
-
-                                             </div>
-                                             <div class="course__instructor-content">
-                                                <h6>항해개발자백엔드</h6>
-                                                <p>스파르타</p>
-                                             </div>
-                                          </div>
-
-
-                                          <div class="course__instructor-item d-flex align-items-center mr-70">
-                                             <div class="course__instructor-thumb mr-20">
-                                               
-                                                <!-- 우리가 추천하는 수업 넣어주면 됌-->
-                                              <a href="course-details?edId=${education.edId=129}">
-                                                <img src="/assets/img/course/${education.edPic='129.PNG'}" alt=""> 
-                                              </a>
-
-                                             </div>
-                                             <div class="course__instructor-content">
-                                                <h6>Java·AI[18기]</h6>
-                                                <p>솔데스크</p>
-                                             </div>
-                                          </div>
-
-
-                                          <div class="course__instructor-item d-flex align-items-center mr-70">
-                                             <div class="course__instructor-thumb mr-20">
-                                               
-                                                <!-- 우리가 추천하는 수업 넣어주면 됌-->
-                                              <a href="course-details?edId=${education.edId=100}">
-                                                <img src="/assets/img/course/${education.edPic='132.PNG'}" alt=""> 
-                                              </a>
-
-                                             </div>
-                                             <div class="course__instructor-content">
-                                                <h6>백엔드개발자취업캠프</h6>
-                                                <p>멀티캠퍼스</p>
-                                             </div>
-                                          </div>
+                                    <div class="course__description-list mb-45">
+                                       <h4>Code a clock은 이런분들을 원해요!</h4>
+                                          <ul>
+                                             <li> <i class="icon_check"></i> 1) 실무에서 배우지 못한부분을 더 배우고 싶으신분!<li>
+                                             <li> <i class="icon_check"></i> 2) 실시간으로 변화하는 코딩없무를 빠르게 캐치하고 싶으신분!</li>
+                                             <li> <i class="icon_check"></i> 3) 저렴한 가격으로 수업받고 싶으신분!</li>
+                                          </ul>
                                        </div>
-                                    </div>
+               
                                  </div>
                          </div><!--1번 내용 div 끝-->
 
@@ -856,11 +806,13 @@
                                                                                        <c:choose>
                                                                                        <c:when test="${pageNumber+1 == i}">
                                                                                           <li>
-                                                                                             <a href="course-details?page=${i}&edId=${param.edId}"><span id="a">${i}</span></a>
+                                                                                             <button class = "zz"><span id="a">${i}</span></button>
                                                                                           </li>
                                                                                        </c:when>
                                                                                        <c:otherwise>
-                                                                                          <li><a href="course-details?page=${i}&edId=${param.edId}"><span id="b">${i}</span></a></li>
+                                                                                          <li>
+                                                                                            <button class = "zz"><span id="b">${i}</span></button> 
+                                                                                          </li>
                                                                                        </c:otherwise>
                                                                                        </c:choose>
                                                                                        </c:forEach>
@@ -899,7 +851,7 @@
                                                                      <!--아이디값 저장 지금은 그냥 임의의 값 넣어줌-->
                                                                      <!--참고로 re_id 는 시퀀스라 자동이고 날짜도 자동으로 들어가게 해놓음-->
                                                                      <input type="text" name="memIdString" value="${sessionScope.memIdString}"  id = memIdString> <!-- "${sessionScope.memIdString}"-->
-                                                                     <input type="hidden" name="memIdInt" value="17"  id = memIdInt> <!-- "${sessionScope.memIdInt}"-->
+                                                                     <input type="hidden" name="memIdInt" value="${sessionScope.memIdInt}"  id = memIdInt>
                                                                      
                                                                   </div>
                                                                </div>
@@ -960,7 +912,7 @@
               </div>
       
               <div>
-                <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.307986091269!2d126.8774806147173!3d37.47705787981479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b619785e31b51%3A0xbd94c111ed53f41e!2z7ZWc6528IOybkOyVpOybkCDtg4Dsm4wg7KeA7Iud7IKw7JeF7IS87YSw!5e0!3m2!1sko!2skr!4v1674467651565!5m2!1sko!2skr" frameborder="0" allowfullscreen></iframe>
+               <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B8%88%EC%B2%9C%EA%B5%AC%20%EB%94%94%EC%A7%80%ED%84%B8%EB%A1%9C9%EA%B8%B8%2099%20%EC%8A%A4%ED%83%80%EB%B0%B8%EB%A6%AC&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
               </div>
       
               <div class="row mt-5">

@@ -472,8 +472,8 @@
                                              <img src="/assets/img/lecture/${lecture.vc_pic}" alt="" width='370' height='260' >
                                           </a>
                                           <div class="course__tag">
-                                             <!-- 국비/ 부트캠프 인지-->
-                                             <a href="#">국비 or 부트캠프</a>
+                                             <!-- 화상-->
+                                             <a href="#">화상 교육</a>
                                           </div>
                                        </div>
                                        <div class="course__content">
