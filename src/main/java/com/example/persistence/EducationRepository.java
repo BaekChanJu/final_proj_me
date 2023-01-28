@@ -77,6 +77,22 @@ public interface EducationRepository extends CrudRepository<EducationVO, Integer
       EducationVO findByedId(Integer edId);
     
       
+      //----메인페이지 ~ 순 출력을위해---------------------------
+      
+      
+      
+      //인덱스페이지에서 별점 높은 녀석만 출력
+      @Query(value= " SELECT *  "
+              + " FROM education "
+              + " WHERE (lower(ed_title) LIKE CONCAT('%',?1,'%')"
+              + " OR lower(ed_name) LIKE CONCAT('%',?1,'%')"
+              + " OR lower(ed_keyword) LIKE CONCAT('%',?1,'%')) " 
+              + " AND ed_tf = 1"
+              + " ORDER BY avg DESC", nativeQuery=true)
+      Page<EducationVO> getNewIndex (Pageable paging, String keywords, String order);
+      
+      
+      
       
 
 }

@@ -426,13 +426,14 @@
                            <div class="course__update mr-80 mb-20">
                               <h5>선생님 강의등록 시간</h5>
                                 <!--날짜의 값이 들어가도록 세팅 -->
-                              <p>${lecture.vcDays}  </p>
+                                <p> <fmt:formatDate value="${lecture.vcDays}" pattern="yyyy년 MM월 dd일 "/> </p>
+                             
                            </div>
 
                            <div class="course__update mr-80 mb-20">
                               <h5>마감일</h5>
                                 <!--날짜의 값이 들어가도록 세팅 -->
-                              <p>2023-2-25 12:00  </p>
+                              <p>2023년 02월 05일   </p>
                            </div>
                          
                        
@@ -774,7 +775,7 @@
                                                             <h4>${reviewList.memIdString}</h4>
                                                          </div>
                                                          <div class="course__comment-info float-start">
-                                                            <span>${reviewList.reDate}</span>
+                                                            <fmt:formatDate value="${reviewList.reDate}" pattern="yyyy년 MM월 dd일 "/>    
                                                          </div>
                                                          <div class="course__comment-rating float-start float-sm-end">
                                                             <tr>

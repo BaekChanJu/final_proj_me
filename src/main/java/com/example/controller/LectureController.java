@@ -98,6 +98,7 @@ public class LectureController {
 		//기본 학원디테일 정보
 		LectureVO result = lectureService.getBoard(vo);
 		String[] a = result.getVc_content().split("\\+");
+		
 		model.addAttribute("title", a);
 		model.addAttribute("lecture", result); // Model 정보 저장   
 		System.out.println("lecture값 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ " + result);

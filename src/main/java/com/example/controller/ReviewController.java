@@ -1,6 +1,7 @@
 package com.example.controller;
 
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,7 @@ public class ReviewController {
         reviewService.saveRV(vo);
         
        
+        
         
         //가져오는거 넣기
         String temp_ed_id = String.valueOf(vo.getEdId());

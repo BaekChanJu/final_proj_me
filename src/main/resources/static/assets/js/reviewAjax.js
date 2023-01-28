@@ -1,3 +1,7 @@
+//날짜부분 출력을 데이터타입 포맷시킨 버전으로 바뀌었는데 페이징시 뒷부분 확인이아직 안되니
+//확인해 보고나서 다시 수정하던가하자
+
+//   d+= " <span>" + value.reDate + "</span>"; 원본모드
 
 $(document).ready(function () {
     
@@ -43,7 +47,7 @@ $(document).ready(function () {
             d+= "<h4>" + value.memIdString + "</h4>";
             d+= "</div>";
             d+= "<div class='course__comment-info float-start'>";
-            d+= " <span>" + value.reDate + "</span>";
+            d+= "<fmt:formatDate value=" +  value.reDate + " pattern='yyyy년 MM월 dd일 '/>"
             d+= "</div>";
             d+= "<div class='course__comment-rating float-start float-sm-end'>";
             d+= "<tr>";
@@ -145,7 +149,7 @@ $(document).ready(function () {
             d+= "<h4>" + value.memIdString + "</h4>";
             d+= "</div>";
             d+= "<div class='course__comment-info float-start'>";
-            d+= " <span>" + value.reDate + "</span>";
+            d+= "<fmt:formatDate value=" +  value.reDate + " pattern='yyyy년 MM월 dd일 '/>"
             d+= "</div>";
             d+= "<div class='course__comment-rating float-start float-sm-end'>";
             d+= "<tr>";

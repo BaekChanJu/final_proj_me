@@ -740,7 +740,7 @@
                                          
                                           <!-- 별점 큰부분 옆 이미지 대체-->
                                           <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                                                <img src="/assets/img/star/re.png "  height="255" width="440">
+                                                <img src="/assets/img/star/re.png "  height="252" width="440">
                                           </div>
                                     </div>
                             </div>
@@ -761,7 +761,7 @@
                                                                         <h4>${reviewList.memIdString}</h4>
                                                                      </div>
                                                                      <div class="course__comment-info float-start">
-                                                                        <span>${reviewList.reDate}</span>
+                                                                        <fmt:formatDate value="${reviewList.reDate}" pattern="yyyy년 MM월 dd일 "/>    
                                                                      </div>
                                                                      <div class="course__comment-rating float-start float-sm-end">
                                                                         <tr>
