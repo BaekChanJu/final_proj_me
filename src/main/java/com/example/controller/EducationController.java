@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.domain.EducationVO;
 import com.example.domain.ReviewVO;
 import com.example.persistence.EducationRepository;
+import com.example.persistence.RankRepository;
 import com.example.persistence.ReviewRepository;
 import com.example.service.EducationService;
 import com.example.service.ReviewService;
@@ -41,6 +42,8 @@ public class EducationController {
    @Autowired
    private ReviewRepository reviewRepository;
 
+   @Autowired
+   private RankRepository rankRepo;
    
    
    
@@ -51,9 +54,9 @@ public class EducationController {
    @GetMapping("/index")
  
    public String getNewIndex(Model m, 
-         @PageableDefault(size = 6, direction = Sort.Direction.DESC) Pageable paging, 
-         @RequestParam(required = false, defaultValue = "") String order,
-         @RequestParam(required = false, defaultValue = "") String keywords){
+      @PageableDefault(size = 6, direction = Sort.Direction.DESC) Pageable paging, 
+      @RequestParam(required = false, defaultValue = "") String order,
+      @RequestParam(required = false, defaultValue = "") String keywords){
       
       //keywords 값 잘넘어옵니다 확인완료
       System.out.println("keywords 값 확인 : " + keywords);
@@ -62,7 +65,7 @@ public class EducationController {
       
       Page<EducationVO> elist = null;
       
-       elist = eduRepo.getNewIndex(paging, keywords, order);
+      elist = eduRepo.getNewIndex(paging, keywords, order);
      
       
      
@@ -74,6 +77,14 @@ public class EducationController {
       List<Object[]> avg = reviewService.avgStar();
       System.out.println("list.size():" + avg.size());   
       m.addAttribute("avg",avg);
+      
+      //학원랭킹 1~3위(경주)
+      //1위
+      m.addAttribute("rankFirst", rankRepo.rankQueryFirst());
+      //2위
+      m.addAttribute("rankSecond", rankRepo.rankQuerySecond());
+      //3위
+      m.addAttribute("rankThird", rankRepo.rankQueryThird());
     
 
       //리턴페이지의 디폴트 값

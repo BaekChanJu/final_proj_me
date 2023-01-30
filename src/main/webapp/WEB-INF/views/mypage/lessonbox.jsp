@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib
-prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
   <head>
@@ -25,13 +26,14 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/wishlist.css" />
     <link rel="stylesheet" href="/assets/css/onoff.css">
+    <link rel="stylesheet" href="/assets/css/tutorBox.css">
     
     <link rel="stylesheet" href="/assets/css/lessonbox.css">
 
     <!--테이블용 css-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/assets/css/dataTable.css">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="/assets/css/dataTable.css">
 
     <style>
       #accordionSidebar {
@@ -130,13 +132,11 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                               <li>
                                  <a href="course-grid" class="cat-menu d-flex align-items-center">
                                     <div class="cat-dot-icon d-inline-block">
-                                     
                                        <input type="checkbox" id="switch" /><label class="onoff" for="switch">Toggle</label>
-
                                     </div>
-                                
+
                                  </a>
-                                 
+
                               </li>
                            </ul>
                         </nav>
@@ -144,33 +144,29 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                   </div>
                </div>
 
-               <!-- JSTL if : 로그인, 로그아웃된 상태 구분-->
+                 <!-- JSTL if : 로그인, 로그아웃된 상태 구분-->
                <c:choose>
-                <c:when test="${empty sessionScope.memIdInt}">
+                  <c:when test="${empty sessionScope.memIdInt}">
 
                      <div class="col-xxl-9 col-xl-9 col-lg-6 col-md-7 col-sm-6 col-6">
                         <div class="eader__center align-items-center d-flex justify-content-center">
                            <div class="main-menu main-menu-3">
                               <nav id="mobile-menu">
                                  <ul>
+                                    <li>
+                                       <a href="/aboutus">AboutUs</a>
+                                    </li>
                                     <li class="has-dropdown">
-                                       <a href="/about">About</a>
+                                       <a href="course-grid">학원/강의</a>
                                        <ul class="submenu">
-                                          <li><a href="/about">소개</a></li>
-                                          <li><a href="/map">지도</a></li>
+                                             <li><a href="/academy/course-sidebar">학원 목록</a></li>
+                                             <li><a href="/academy/rank">학원 랭크</a></li>
+                                             <li><a href="/lecture/tutor">튜터 목록</a></li>
+                                             <li><a href="/lecture/lecture-sidebar">강의 목록</a></li>
                                        </ul>
                                     </li>
                                     <li class="has-dropdown">
-                                       <a>학원/화상</a>
-                                       <ul class="submenu">
-                                          <li><a href="/academy/course-sidebar">학원 목록</a></li>
-                                          <li><a href="/academy/rank">학원 랭크</a></li>
-                                          <li><a href="/lecture/tutor">선생님</a></li>
-                                          <li><a href="/lecture/lecture-sidebar">강의</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="has-dropdown">
-                                       <a href="honestAnswer">게시판</a>
+                                       <a href="">게시판</a>
                                        <ul class="submenu">
                                           <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -179,24 +175,24 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="/chatbot">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
                            </div>
+
                            <div class="header__search p-relative ml-50 d-none d-md-block">
-                              <form action="#">
-                                 <input type="text" placeholder="Search...">
+
+                              <!--맨위 검색부분임-->
+                              <form action= /academy/course-sidebar method="GET" role="search">
+                                 <input type="text" name ="keywords" placeholder="Search...">
                                  <button type="submit"><i class="fad fa-search"></i></button>
                               </form>
                               <div class="header__cart">
                                  <a href="javascript:void(0);" class="cart-toggle-btn">
                                     <div class="header__cart-icon">
-                                       <svg viewBox="0 0 24 24">
-                                          <circle class="st0" cx="9" cy="21" r="1"/>
-                                          <circle class="st0" cx="20" cy="21" r="1"/>
-                                          <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
-                                       </svg>
+                                       <img src="/assets/img/heart.png" alt="heart">
+
                                     </div>
                                     <span class="cart-item">2</span>
                                  </a>
@@ -219,28 +215,24 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                   <c:when test="${not empty sessionScope.memIdInt}">
 
                      <div class="col-xxl-9 col-xl-9 col-lg-6 col-md-7 col-sm-6 col-6">
-                        <div class="eader__center align-items-center d-flex justify-content-center">
+                        <div class="header__center align-items-center d-flex justify-content-center">
                            <div class="main-menu main-menu-3">
                               <nav id="mobile-menu">
                                  <ul>
+                                    <li>
+                                       <a href="/aboutus">AboutUs</a>
+                                    </li>
                                     <li class="has-dropdown">
-                                       <a href="/about">About</a>
+                                       <a href="course-grid">학원/강의</a>
                                        <ul class="submenu">
-                                          <li><a href="/about">소개</a></li>
-                                          <li><a href="/map">지도</a></li>
+                                             <li><a href="/academy/course-sidebar">학원 목록</a></li>
+                                             <li><a href="/academy/rank">학원 랭크</a></li>
+                                             <li><a href="/lecture/tutor">튜터 목록</a></li>
+                                             <li><a href="/lecture/lecture-sidebar">강의 목록</a></li>
                                        </ul>
                                     </li>
                                     <li class="has-dropdown">
-                                       <a>학원/화상</a>
-                                       <ul class="submenu">
-                                          <li><a href="/academy/course-sidebar">학원 목록</a></li>
-                                          <li><a href="/academy/rank">학원 랭크</a></li>
-                                          <li><a href="/lecture/tutor">선생님</a></li>
-                                          <li><a href="/lecture/lecture-sidebar">강의</a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="has-dropdown">
-                                       <a>게시판</a>
+                                       <a href="">게시판</a>
                                        <ul class="submenu">
                                           <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -249,19 +241,19 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="/chatbot">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
                            </div>
                            <!-- 0103 찬주2
-                              메인화면에서의 검색기능과 동일한 부분 
-                           -->
+                           메인화면에서의 검색기능과 동일한 부분 
+                        -->
 
                            <div class="header__search p-relative ml-50 d-none d-md-block">
 
-                              <form id = "main" action=/academy/course-sidebar method="GET">
-                                 <input type="text" name ="keywords"  placeholder="ex)교육과정 및 학원이름 검색">
+                              <form id="main" action=/academy/course-sidebar method="GET">
+                                 <input type="text" name="keywords" placeholder="여기서 검색">
                                  <button type="submit"><i class="fad fa-search"></i></button>
                               </form>
                               <!-- 검색 끝-->
@@ -272,19 +264,60 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                               <div class="header__cart">
                                  <a href="javascript:void(0);" class="cart-toggle-btn">
                                     <div class="header__cart-icon">
-                                       <svg viewBox="0 0 24 24">
-                                          <circle class="st0" cx="9" cy="21" r="1"/>
-                                          <circle class="st0" cx="20" cy="21" r="1"/>
-                                          <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
-                                       </svg>
+                                       <img src="/assets/img/heart.png" alt="heart"/ >
                                     </div>
                                     <span class="cart-item">2</span>
                                  </a>
                               </div>
                            </div>
                            <div class="header__btn ml-20 d-none d-sm-block">
-                              <a href="/logoutMember" class="e-btn">로그아웃</a>
+                             <!--  <div class="usercontainer">
+                                 <div class="usernav">
+                                   <h3>${sessionScope.memIdString}</h3>
+                                   <div class="drop">
+                                    <img class="user" src="/assets/img/user.png" alt="user"style="margin-right: 10px;"/>
+                                     <span class="online"></span>
+                                     <i class="fi-rr-angle-small-down"></i>
+                                   </div>
+                                 </div>
+                           </div>  -->
+
+                           <!--마이페이지-->
+                           <div class="header__category d-none d-lg-block">
+                              <nav>
+                                 <ul>
+                                    <li>
+                                       <!-- <a href="course-grid" class="cat-menu d-flex align-items-center"> -->
+                                         
+                                          <!-- <span>${sessionScope.memIdString}</span> -->
+                                          <div class="drop">
+                                             <img class="user" src="/assets/img/user.png" alt="user"style="margin-right: 10px;"/>
+                                              <span class="online"></span>
+                                              <i class="fi-rr-angle-small-down"></i>
+                                            </div>
+
+                                       <!-- </a> -->
+                                       <ul class="cat-submenu">
+                                          <li><h4 style="margin-left: 10px;">${sessionScope.memIdString}님</h4></li>
+                                          <li class="sy" style="margin-left: 10px">${sessionScope.memEmail}</li>
+                                          <hr>
+                                          <li><a href="/mypage/modify">마이페이지</a></li>
+                                          <li><a href="/mypage/myreview">작성글 관리</a></li>
+                                          <li><a href="/mypage/lessonreserve">예약 현황</a></li>
+                                          <li><a href="/logoutMember">로그아웃</a></li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </nav>
                            </div>
+
+
+
+
+
+                           
+                           
+
                            <div class="sidebar__menu d-xl-none">
                               <div class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
                                  <span class="line"></span>
@@ -296,7 +329,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                      </div>
 
                   </c:when>
-         </c:choose>
+               </c:choose>
                <!-- JSTL c:when 끝-->
 
             </div>
@@ -305,92 +338,77 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
    </header>
    <!-- header area end -->
 
-    <!-- cart mini area start -->
-    <div class="cartmini__area">
-      <div class="cartmini__wrapper">
-        <div class="cartmini__title">
-          <h4>Shopping cart</h4>
-        </div>
-        <div class="cartmini__close">
-          <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
-        </div>
-        <div class="cartmini__widget">
-          <div class="cartmini__inner">
-            <ul>
-              <li>
-                <div class="cartmini__thumb">
-                  <a href="#">
-                    <img src="/assets/img/course/sm/cart-1.jpg" alt="" />
-                  </a>
-                </div>
-                <div class="cartmini__content">
-                  <h5><a href="#">Strategy law and organization Foundation </a></h5>
-                  <div class="product-quantity mt-10 mb-10">
-                    <span class="cart-minus">-</span>
-                    <input class="cart-input" type="text" value="1" />
-                    <span class="cart-plus">+</span>
-                  </div>
-                  <div class="product__sm-price-wrapper">
-                    <span class="product__sm-price">$46.00</span>
-                  </div>
-                </div>
-                <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
-              </li>
-              <li>
-                <div class="cartmini__thumb">
-                  <a href="#">
-                    <img src="/assets/img/course/sm/cart-2.jpg" alt="" />
-                  </a>
-                </div>
-                <div class="cartmini__content">
-                  <h5><a href="#">Fundamentals of music theory Learn new</a></h5>
-                  <div class="product-quantity mt-10 mb-10">
-                    <span class="cart-minus">-</span>
-                    <input class="cart-input" type="text" value="1" />
-                    <span class="cart-plus">+</span>
-                  </div>
-                  <div class="product__sm-price-wrapper">
-                    <span class="product__sm-price">$32.00</span>
-                  </div>
-                </div>
-                <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
-              </li>
-              <li>
-                <div class="cartmini__thumb">
-                  <a href="#">
-                    <img src="/assets/img/course/sm/cart-3.jpg" alt="" />
-                  </a>
-                </div>
-                <div class="cartmini__content">
-                  <h5><a href="#">Strategy law and organization Foundation </a></h5>
-                  <div class="product-quantity mt-10 mb-10">
-                    <span class="cart-minus">-</span>
-                    <input class="cart-input" type="text" value="1" />
-                    <span class="cart-plus">+</span>
-                  </div>
-                  <div class="product__sm-price-wrapper">
-                    <span class="product__sm-price">$62.00</span>
-                  </div>
-                </div>
-                <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
-              </li>
-            </ul>
-          </div>
-          <div class="cartmini__checkout">
-            <div class="cartmini__checkout-title mb-30">
-              <h4>Subtotal:</h4>
-              <span>$113.00</span>
-            </div>
-            <div class="cartmini__checkout-btn">
-              <a href="cart" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
-              <a href="checkout" class="e-btn w-100"> <span></span> checkout</a>
-            </div>
-          </div>
-        </div>
+<!-- cart mini area start -->
+<div class="cartmini__area">
+   <div class="cartmini__wrapper">
+      <div class="cartmini__title">
+         <h4>Shopping cart</h4>
       </div>
-    </div>
-    <div class="body-overlay"></div>
-    <!-- cart mini area end -->
+      <div class="cartmini__close">
+         <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+      </div>
+      <div class="cartmini__widget ">
+         <div class="cartmini__inner" style="overflow-x:hidden;">
+            <ul>
+               <c:forEach items="${jjimList}" var="wish">
+               <li>
+                  <div class="cartmini__thumb">
+                     <a href="#">
+                        <img src="/assets/img/lecture/${wish[3]}" alt="">
+                     </a>
+                  </div>
+                  <div class="cartmini__content">
+                     <h5><a href="#">${wish[0]} </a></h5>
+                     <div class="product-quantity mt-10 mb-10">
+                     </div>
+                     <div class="product__sm-price-wrapper">
+                        <span class="product__sm-price">${wish[3]}</span>
+                     </div>
+                  </div>
+                  <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+               </li>
+               </c:forEach>
+            </ul>
+         </div>
+         <div class="cartmini__checkout">
+
+            <div class="cartmini__checkout-btn">
+               <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
+            </div>
+         </div>
+         <div class="cartmini__inner ">
+            <ul>
+               <c:forEach items="${wishList}" var="wish">
+               <li>
+                  <div class="cartmini__thumb">
+                     <a href="#">
+                        <img src="/assets/img/course/${wish[4]}" alt="">
+                     </a>
+                  </div>
+                  <div class="cartmini__content">
+                     <h5><a href="#">${wish[0]} </a></h5>
+                     <div class="product-quantity mt-10 mb-10">
+                     </div>
+                     <div class="product__sm-price-wrapper">
+                        <span class="product__sm-price">${wish[3]}</span>
+                     </div>
+                  </div>
+                  <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+               </li>
+               </c:forEach>
+            </ul>
+         </div>
+         <div class="cartmini__checkout">
+
+            <div class="cartmini__checkout-btn">
+               <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="body-overlay"></div>
+<!-- cart mini area end -->
 
     <!-- sidebar area start -->
     <div class="sidebar__area">
@@ -461,12 +479,10 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
       </section>
       <!-- page title area end -->
 
-    <!-- 왼쪽 메뉴 표 Strat-->
+     <!-- 왼쪽 메뉴 표 Strat-->
       
-    <section class="cart-area pt-100 pb-100">
-      <div class="accounthead">
-         <h4>회원정보 수정</h4>
-      </div>
+     <section class="cart-area pt-100 pb-100">
+     
      <div class="container">
       
        <div class="row">
@@ -477,170 +493,178 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                id="accordionSidebar"
              >
 
-               <li class="nav-item">
-                 <a
-                   class="nav-link collapsed"
-                   href="admin/academyList"
-                   data-toggle="collapse"
-                   data-target="#collapseOne"
-                   aria-expanded="true"
-                   aria-controls="collapseOne"
-                 >
-                   <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
-                 </a>
-                 <div
-                   id="collapseOne"
-                   class="collapse"
-                   aria-labelledby="headingUtilities"
-                   data-parent="#accordionSidebar"
-                 >
-                   <div class="bg-white py-2 collapse-inner rounded">
-                     <a class="collapse-item" href="/mypage/modify">회원정보 수정</a><br />
-                     <a class="collapse-item" href="/mypage/withdrawal">회원 탈퇴</a>
-                   </div>
-                 </div>
-               </li>
-
-               <li class="nav-item">
-                 <a
-                   class="nav-link collapsed"
-                   href="admin/tutorList"
-                   data-toggle="collapse"
-                   data-target="#collapseTwo"
-                   aria-expanded="true"
-                   aria-controls="collapseTwo"
-                 >
-                   <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
-                 </a>
-                 <div
-                   id="collapseTwo"
-                   class="collapse"
-                   aria-labelledby="headingUtilities"
-                   data-parent="#accordionSidebar"
-                 >
-                   <div class="bg-white py-2 collapse-inner rounded">
-                     <a class="collapse-item" href="/mypage/myreview">국비/부트 리뷰</a><br />
-                     <a class="collapse-item" href="/mypage/myreview2">화상/교육 리뷰</a><br />
-                     <a class="collapse-item" href="/mypage/honestAnswer">솔직 답변</a>
-                   </div>
-                 </div>
-               </li>
-
-               <li class="nav-item">
-                 <a
-                   class="nav-link collapsed"
-                   href="admin/tutorList"
-                   data-toggle="collapse"
-                   data-target="#collapseThree"
-                   aria-expanded="true"
-                   aria-controls="collapseThree"
-                 >
-                   <i class="fas fa-heart"></i> <span>WishList</span>
-                 </a>
-                 <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                   <div class="bg-white py-2 collapse-inner rounded">
-                     <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
-                     <a class="collapse-item" href="/mypage/wishlistlec">관심강의리스트</a>
-                   </div>
-                 </div>
-               </li>
-
-               <li class="nav-item">
-                 <a
-                   class="nav-link collapsed"
-                   href="admin/lectureList.do"
-                   data-toggle="collapse"
-                   data-target="#collapseFour"
-                   aria-expanded="true"
-                   aria-controls="collapseFour"
-                 >
-                   <i class="fas fa-fw fa-desktop"></i> <span>화상 내역</span>
-                 </a>
-                 <div
-                   id="collapseFour"
-                   class="collapse"
-                   aria-labelledby="headingUtilities"
-                   data-parent="#accordionSidebar"
-                 >
-                   <div class="bg-white py-2 collapse-inner rounded">
-                     <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
-                     <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
-                   </div>
-                 </div>
-               </li>
-
-
-
-               <li class="nav-item">
-                 <a 
+             <li class="nav-item">
+               <a
                  class="nav-link collapsed"
-                   href="admin/lectureList.do"
-                   data-toggle="collapse"
-                   data-target="#collapseFour2"
-                   aria-expanded="true"
-                   aria-controls="collapseFour2">
-                   <i class="fas fa-fw fa-table"></i> <span>등록관리</span>
-                 </a>
-                
-                 <div
-                 id="collapseFour2"
+                 href="admin/academyList"
+                 data-toggle="collapse"
+                 data-target="#collapseOne"
+                 aria-expanded="true"
+                 aria-controls="collapseOne"
+               >
+                 <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
+               </a>
+               <div
+                 id="collapseOne"
                  class="collapse"
                  aria-labelledby="headingUtilities"
                  data-parent="#accordionSidebar"
                >
-               <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="/mypage/tutorInsert">선생님 등록</a><br />
-                 <a class="collapse-item" href="/mypage/educationInsert">학원 등록</a><br />
+                 <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="/mypage/modify">회원정보 수정</a><br />
+                   <a class="collapse-item" href="/mypage/withdrawal">회원 탈퇴</a>
+                 </div>
                </div>
+             </li>
+
+             <li class="nav-item">
+               <a
+                 class="nav-link collapsed"
+                 href="admin/tutorList"
+                 data-toggle="collapse"
+                 data-target="#collapseTwo"
+                 aria-expanded="true"
+                 aria-controls="collapseTwo"
+               >
+                 <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
+               </a>
+               <div
+                 id="collapseTwo"
+                 class="collapse"
+                 aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar"
+               >
+                 <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="/mypage/myreview">국비/부트 리뷰</a><br />
+                   <a class="collapse-item" href="/mypage/myreview2">화상/교육 리뷰</a><br />
+                   <a class="collapse-item" href="/mypage/honestAnswer">솔직 답변</a>
+                 </div>
+               </div>
+             </li>
+
+             <li class="nav-item">
+               <a
+                 class="nav-link collapsed"
+                 href="admin/tutorList"
+                 data-toggle="collapse"
+                 data-target="#collapseThree"
+                 aria-expanded="true"
+                 aria-controls="collapseThree"
+               >
+                 <i class="fas fa-heart"></i> <span>WishList</span>
+               </a>
+               <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                 <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
+                   <a class="collapse-item" href="/mypage/jjimlist">관심강의리스트</a>
+                 </div>
+               </div>
+             </li>
+
+             <li class="nav-item">
+               <a
+                 class="nav-link collapsed"
+                 href="admin/lectureList.do"
+                 data-toggle="collapse"
+                 data-target="#collapseFour"
+                 aria-expanded="true"
+                 aria-controls="collapseFour"
+               >
+                 <i class="fas fa-fw fa-desktop"></i> <span>화상 내역</span>
+               </a>
+               <div
+                 id="collapseFour"
+                 class="collapse"
+                 aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar"
+               >
+                 <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
+                   <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
+                 </div>
+               </div>
+             </li>
+
+
+
+             <li class="nav-item">
+               <a 
+               class="nav-link collapsed"
+                 href="admin/lectureList.do"
+                 data-toggle="collapse"
+                 data-target="#collapseFour2"
+                 aria-expanded="true"
+                 aria-controls="collapseFour2">
+                 <i class="fas fa-fw fa-table"></i> <span>등록관리</span>
+               </a>
+              
+               <div
+               id="collapseFour2"
+               class="collapse"
+               aria-labelledby="headingUtilities"
+               data-parent="#accordionSidebar"
+             >
+             <div class="bg-white py-2 collapse-inner rounded">
+               <a class="collapse-item" href="/mypage/tutorInsert">선생님 등록</a><br />
+               <a class="collapse-item" href="/mypage/educationInsert">학원 등록</a><br />
              </div>
-               </li>
+           </div>
+             </li>
+            
+
+
+
+             
+             <li class="nav-item">
+               <a
+                 class="nav-link collapsed"
+                 href="admin/lectureList.do"
+                 data-toggle="collapse"
+                 data-target="#collapseFive"
+                 aria-expanded="true"
+                 aria-controls="collapseFive"
+               >
+                 <i class="fas fa-fw fa-desktop"></i> <span>튜터의 화상 내역</span>
+               </a>
+               <div
+                 id="collapseFive"
+                 class="collapse"
+                 aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar"
+               >
+                 <div class="bg-white py-2 collapse-inner rounded give-border">
+                   <a class="collapse-item" href="/mypage/tutorReserve">예약 현황</a><br />
+                   <a class="collapse-item" href="/mypage/tutorBox">수업함</a>
+                 </div>
+               </div>
+             </li>
+
+             <!-- Nav Item - Pages Collapse Menu -->
+           </ul>
+         </div>
+       </div>
+            <div class="col-sm-9">
+              
               
 
+            </div>
+          </div>
 
-
-               
-               <li class="nav-item">
-                 <a
-                   class="nav-link collapsed"
-                   href="admin/lectureList.do"
-                   data-toggle="collapse"
-                   data-target="#collapseFive"
-                   aria-expanded="true"
-                   aria-controls="collapseFive"
-                 >
-                   <i class="fas fa-fw fa-desktop"></i> <span>튜터의 화상 내역</span>
-                 </a>
-                 <div
-                   id="collapseFive"
-                   class="collapse"
-                   aria-labelledby="headingUtilities"
-                   data-parent="#accordionSidebar"
-                 >
-                   <div class="bg-white py-2 collapse-inner rounded give-border">
-                     <a class="collapse-item" href="/mypage/tutorReserve">예약 현황</a><br />
-                     <a class="collapse-item" href="/mypage/tutorBox">수업함</a>
-                   </div>
-                 </div>
-               </li>
-
-               <!-- Nav Item - Pages Collapse Menu -->
-             </ul>
-           </div>
-         </div>
+          <div class="row">
 
             <!-- 테이블 시작 -->
             <section class="ftco-section">
                <div class="container">
                   <div class="row">
-                     <span class="col-md-12 mb-1">
+                     <span class="col-md-12 mb-12">
 
-                        <form action="/mypage/lessonSearch" class="float-right">
-                           <select id="search-opt" name="column">
-                              <option value="제목">제목</option>
-                              <option value="선생님">선생님</option>
-                              <option value="파일">파일</option>
+                        <form action="/mypage/tutorBox" class="float-right">
+                           <select id="search-opt" name="type">
+                              <option value="vc_title">제목</option>
+                              <option value="cal_start">날짜</option>
+                              <option value="t_name">선생님</option>
                            </select>
-                           <input type="text" name="search" class="search-data-input" placeholder="검색...">
+                           <input type="text" name="searchword" class="search-data-input" placeholder="검색...">
                            <button type="submit" class="d-btn">검색하기</button>
                         </form>
 
@@ -651,76 +675,111 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                         <div>
                            <table class="table">
                              <thead class="thead-dark">
+
                                <tr>
-                                 <th>날짜</th>
-                                 <th>선생님</th>
-                                 <th>강의제목</th>
-                                 <th>녹화본</th>
-                                 <th>자료</th>
+                                 <th class="tb-centered">날짜</th>
+                                 <th class="tb-centered">선생님</th>
+                                 <th class="tb-centered">강의제목</th>
+                                 <th class="tb-centered">녹화본</th>
+                                 <th class="tb-centered">자료</th>
                                </tr>
                              </thead>
                              <tbody>
-                               <tr class="alert" role="alert">
-                                 <th scope="row">2023-01-27 오전 10시</th>
-                                 <td>강의섭</td>
-                                 <td>강의 이름, 강의 이름, 강의 이름</td>
-                                 <td>
-                                    "230127-01" <br/>
-                                    "230127-02" <br/>
-                                 </td>
-                                 <td>
-                                    <a href="/outside/www.naver.com">www.naver.com</a>
-                                </td>
-                               </tr>
-                               <tr class="alert" role="alert">
-                                 <th scope="row">002</th>
-                                 <td>Jacob</td>
-                                 <td>Thornton</td>
-                                 <td>jacobthornton@email.com</td>
-                                 <td>
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                  </a>
-                                </td>
-                               </tr>
-                               <tr class="alert" role="alert">
-                                 <th scope="row">003</th>
-                                 <td>Larry</td>
-                                 <td>the Bird</td>
-                                 <td>larrybird@email.com</td>
-                                 <td>
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                  </a>
-                                </td>
-                               </tr>
-                               <tr class="alert" role="alert">
-                                 <th scope="row">004</th>
-                                 <td>John</td>
-                                 <td>Doe</td>
-                                 <td>johndoe@email.com</td>
-                                 <td>
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                  </a>
-                                </td>
-                               </tr>
-                               <tr class="alert" role="alert">
-                                 <th scope="row">005</th>
-                                 <td>Gary</td>
-                                 <td>Bird</td>
-                                 <td>garybird@email.com</td>
-                                 <td>
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                  </a>
-                                </td>
-                               </tr>
+
+                              <c:forEach items="${mypageTutorBoxList}" var="TB">
+                                <tr>
+                                  <th scope="row" class="tb-middle">${TB.cal_start}</th>
+                                  <td class="tb-middle">${TB.tcname}</td>
+                                  <td class="tb-middle">${TB.vctitle}</td>
+                                  <td class="tb-middle">
+                                    <c:forEach items="${tutorRecord}" var="TR">
+                                      <c:if test="${TR.calId eq TB.cal_id}">
+                                        <a href="/mypage/video/?loc=/assets/files/rec/test.mp4" target="_blank" class="recordedVideo">${TR.origRecName}</a> <br/>
+                                      </c:if>
+                                    </c:forEach>
+                                  </td>
+                                  <td class="tb-middle">
+                                    <c:forEach items="${tutorFile}" var="TF">
+                                      <c:if test="${TF.calId eq TB.cal_id}">
+                                        <a href="/assets/files/files/${TF.fileName}" download="${TF.origFileName}">${TF.origFileName}</a> <br/>
+                                      </c:if>
+                                    </c:forEach>
+                                    
+                                    <input type="hidden" class="mid" name="memIdInt" value="${TB.m_idint}">
+                                    <input type="hidden" class="calid" name="calid" value="${TB.cal_id}">
+                                    <input type="hidden" class="teachid" name="teacherId" value="${sessionScope.teacherId}">
+                                  </td>
+                                </tr>
+                              </c:forEach>
+
                              </tbody>
                            </table>
                         </div>
                      </div>
                   </div>
+
+                  <!-- 페이징 영역 시작  경호형꺼 받음 0104-->
+                  <div class="row">
+                    <div class="col-xxl-12 ">
+                       <div class="basic-pagination wow fadeInUp mt-30" data-wow-delay=".2s">
+                          <ul class="d-flex align-items-center justify-content-center"> 
+                             
+                             <!-- first : 해당 페이지가 첫번째 페이지인지 여부(true/false로 구분)-->
+                             <!-- 해당페이지가 첫번째인 경우에는 아무것도 설정안함-->
+                             <!-- 해당 페이지가 첫번째 페이지가 아닌경우-->
+                             <!-- 맨처음페이지로 이동 -->
+                             <c:choose>
+                             <c:when test="${elist.first}"></c:when>
+                             
+                             <c:otherwise>
+                             <li class="prev">
+                                <a href="tutorBox?page=1" class="link-btn link-prev">
+                                   Prev
+                                   <i class="arrow_left"></i>
+                                   <i class="arrow_left"></i>
+                                </a>
+                             </li>
+                          </c:otherwise>
+                       </c:choose>
+
+                    <!-- 페이지 그룹 -->
+                    <!-- 시작블럭을 반복시작 인덱스로 종료블럭을 반복종료 인덱스로 설정  -->
+                    <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
+                    <!-- 현재페이지의 +1이 i랑 같은 경우 다음페이지로 이동하게 설정 -->
+                    <!-- 현재페이지의 +1이 i랑 다른 경우 다음 페이지로 이동하게 설정-->
+                    <c:choose>
+                    <c:when test="${pageNumber+1 == i}">
+                       <li>
+                          <a href="tutorBox?page=${i}"><span>${i}</span></a>
+                       </li>
+                    </c:when>
+                    <c:otherwise>
+                       <li><a href="tutorBox?page=${i}"><span>${i}</span></a></li>
+                    </c:otherwise>
+                    </c:choose>
+                    </c:forEach>
+                    <!-- 맨마지막페이지 -->
+                    <!-- last : 해당 페이지가 마지막 페이지인지 여부(true/false로 구분)-->
+                    <!-- 해당페이지가 마지막인 경우에는 아무것도 설정안함-->
+                    <!-- 해당 페이지가 마지막 페이지가 아닌경우-->
+                    <!-- 마지막페이지로 이동 -->
+                    <c:choose>     
+                    <c:when test="${elist.last}"></c:when>
+                    <c:otherwise>
+                       <li class="next">
+                          <a href="tutorBox?page=${totalPages}" class="link-btn">
+                          Next
+                          <i class="arrow_right"></i>
+                          <i class="arrow_right"></i>
+                          </a>
+                       </li>
+                    </c:otherwise>
+                    </c:choose>
+                          </ul>
+                       </div>
+                    </div>
+                  </div>
+
                </div>
             </section>
             <!-- 테이블 끝 -->
@@ -732,124 +791,132 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
       <!-- Cart Area End-->
     </main>
 
-    <!-- footer area start -->
-    <footer>
-      <div class="footer__area footer-bg">
-        <div class="footer__top pt-90 pb-40">
-          <div class="container">
-            <div class="row">
-              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                <div class="footer__widget mb-50">
-                  <div class="footer__widget-head mb-22">
-                    <div class="footer__logo">
-                      <a href="index">
-                        <img src="/assets/img/logo/logo-2.png" alt="" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="footer__widget-body">
-                    <p>
-                      Great lesson ideas and lesson plans for ESL teachers! Educators can customize
-                      lesson plans to best.
-                    </p>
-
-                    <div class="footer__social">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="social_facebook"></i></a>
-                        </li>
-                        <li>
-                          <a href="#" class="tw"><i class="social_twitter"></i></a>
-                        </li>
-                        <li>
-                          <a href="#" class="pin"><i class="social_pinterest"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1"
-              >
-                <div class="footer__widget mb-50">
-                  <div class="footer__widget-head mb-22">
-                    <h3 class="footer__widget-title">Company</h3>
-                  </div>
-                  <div class="footer__widget-body">
-                    <div class="footer__link">
-                      <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Instructor</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Become a Teacher</a></li>
-                        <li><a href="#">Contact</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
-                <div class="footer__widget mb-50">
-                  <div class="footer__widget-head mb-22">
-                    <h3 class="footer__widget-title">Platform</h3>
-                  </div>
-                  <div class="footer__widget-body">
-                    <div class="footer__link">
-                      <ul>
-                        <li><a href="#">Browse Library</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">News & Blogs</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
-                <div class="footer__widget footer__pl-70 mb-50">
-                  <div class="footer__widget-head mb-22">
-                    <h3 class="footer__widget-title">Subscribe</h3>
-                  </div>
-                  <div class="footer__widget-body">
-                    <div class="footer__subscribe">
-                      <form action="#">
-                        <div class="footer__subscribe-input mb-15">
-                          <input type="email" placeholder="Your email address" />
-                          <button type="submit">
-                            <i class="far fa-arrow-right"></i>
-                            <i class="far fa-arrow-right"></i>
-                          </button>
+    <!-- modal: HonestQuestion -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <form id="uploadFile" action="uploadFile" method="post" enctype="multipart/form-data">
+              <input type="hidden" id="modal_mid" name="memIdInt" value="">
+              <input type="hidden" id="modal_calid" name="calId" value="">
+              <input type="hidden" id="teacherid" name="teacherId" value="${sessionScope.teacherId}">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">자료 올리기</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body move-to-center">
+                  <div class="mb-3 mt-3">
+                    
+                      <div class="filebox mb-3 mt-3">
+                        <div>
+                          <input class="upload-name" value="파일선택" disabled="disabled">
+                          <label for="ex_filename">업로드</label> 
+                          <input type="file" id="ex_filename" class="upload-hidden" name="file" multiple>
                         </div>
-                      </form>
-                      <p>Get the latest news and updates right at your inbox.</p>
-                    </div>
+                      </div>
+                    
                   </div>
+                  <!-- <img id="more-add-file" src="/assets/img/icon/plus.png" style="height: 20px; width: 20px;"> -->
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <div class="container">
-            <div class="row">
-              <div class="col-xxl-12">
-                <div class="footer__copyright text-center">
-                  <p>
-                    © 2022 Educal, All Rights Reserved. Design By <a href="index">Theme Pure</a>
-                  </p>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">업로드하기</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
-              </div>
-            </div>
+            </form>
           </div>
-        </div>
       </div>
-    </footer>
-    <!-- footer area end -->
+    </div>
+
+    <!-- footer area start -->
+         <footer>
+            <div class="footer__area grey-bg-2">
+               <div class="footer__top pt-20 pb-0">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                           <div class="footer__widget mb-50">
+                              <div class="footer__widget-head mb-22">
+                                 <img src="/assets/img/logo/logo.png" alt="">
+                              </div>
+                              <div class="footer__widget-body footer__widget-body-2">
+                                 
+
+                                 
+                              </div>
+                           </div>
+                        </div>
+                        <div
+                           class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
+                           <div class="footer__widget mb-50">
+                              <div class="footer__widget-head mb-22">
+                                 
+                              </div>
+                              <div class="footer__widget-body">
+                                 <div class="footer__link footer__link-2">
+                                    <div class="footer__logo">
+                                       <a href="index">
+
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
+                           <div class="footer__widget mb-50">
+                              <div class="footer__widget-head mb-22">
+                                 
+                              </div>
+                              <div class="footer__widget-body">
+                                 <div class="footer__link footer__link-2">
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
+                           <div class="footer__widget footer__pl-70 mb-50">
+                              <div class="footer__widget-head mb-22">
+                                 
+                              </div>
+                              <div class="footer__widget-body">
+                                 <div class="footer__subscribe footer__subscribe-2">
+                                    <form action="#">
+                                       <div class="footer__subscribe-input mb-15">
+                                          
+                                          <div class="footer__social" style="margin-left: 100px;">
+                                             <ul>
+                                                <li><a href="#"><i class="social_facebook"></i></a></li>
+                                                <li><a href="#" class="tw"><i class="social_twitter"></i></a></li>
+                                                <li><a href="#" class="pin"><i class="social_pinterest"></i></a></li>
+                                             </ul>
+                                          </div>
+                                          
+                                       </div>
+                                       
+                                    </form>
+                                    
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="footer__bottom footer__bottom-2">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-xxl-12">
+                           <div class="footer__copyright footer__copyright-2 text-center">
+                              <p>Shout out to Soyun Kim <a href="">By BK jeon</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- footer area end -->
     <!-- JS here -->
     <script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
     <script src="/assets/js/vendor/waypoints.min.js"></script>
@@ -874,5 +941,95 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
     <!-- 테이블용 js -->
    <script src="/assets/js/dataTablePopper.js"></script>
    <script src="/assets/js/dataTable.js"></script>
+
+    <script>
+      $(document).ready(function(){
+//------------------------------------------------------------------------------------------------
+        
+        var fileTarget = $('.filebox .upload-hidden');
+
+        $(document).on('change', 'input[type=file]', function(){  // 값이 변경되면
+          if(window.FileReader){  // modern browser
+            var filename = $(this)[0].files[0].name;
+          } 
+          else {  // old IE
+            var filename = $(this).val().split('/').pop().split('\\').pop();  // 파일명만 추출
+          }
+          
+          // 추출한 파일명 삽입
+          // alert($(this).parent().find('.upload-name').val());
+          $(this).prev().prev().val(filename);
+        });
+        
+//-------------------------------------------------------------------------------------------------------
+        var moreAF = $('#more-add-file');
+        var filebox = $('.filebox');
+        // var uploadFileHTML = filebox.html();
+        // var uploadFileHTML = '<div class="filebox mb-3 mt-3"><input class="upload-name" value="파일선택" disabled="disabled"><label for="ex_filename label-norm">업로드</label><input type="file" id="ex_filename" class="upload-hidden"></div>'
+        let num = 1;
+
+        moreAF.on("click", function(event){
+          //event.stopPropagation();
+          //event.preventDefault();
+          var uploadFileHTML = '<div><input class="upload-name" value="파일선택" disabled="disabled"><label for="ex_filename'+ num +' label-norm">업로드</label><input type="file" id="ex_filename'+ num +'" class="upload-hidden" name="file" multiple></div>'
+          filebox.append(uploadFileHTML);
+          ++num;
+        });
+//--------------------------------------------------------------------------------------------------------
+        
+        
+        var adf = $(".add-file");
+        var modal_mid = $('#modal_mid');
+        var modal_calid = $('#modal_calid');
+
+        adf.click(function(){
+          
+          var mid = $(this).parent().find(".mid").val();
+          modal_mid.val(mid);
+
+          var calid = $(this).parent().find(".calid").val();
+          modal_calid.val(calid);
+
+        })
+        
+        
+        /*
+        var calid = $("#modal_calid").val();
+        var mid = $("#modal_mid").val();
+        var teacherid = $("#teacherid").val();
+
+        var form = $('form#uploadFile');
+        
+        $('.btn-primary').on("click", function(){
+          event.preventDefault();
+          // alert(`calid : ${modal_calid.val()}, mid : ${modal_mid.val()}, teacherid : ${teacherid}`)
+          form.innerHTML = `<input name="calId" value="">`;
+          // $('#uploadFile').submit();
+        })
+        */
+
+        /*
+        function show_video(data) {
+          let winW=500;
+          let winH=650;
+          let vodW=400;
+          let vodH=600;
+          let size=`width=${winW}, height=${winH}`;
+          let popup=window.open("", "", size);
+
+          popup.document.open();
+          popup.document.write("<html><head>");
+          popup.document.write("<title>video</title>");
+          popup.document.write("</head><body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>");
+          popup.document.write("<center><video src'"+data+"' width='"+vodW+"' height='"+vodH+"'></video></center>");
+          popup.document.write("</body></html>");
+          popup.document.close();
+        }
+        */
+        
+
+      }); 
+    </script>
+
    </body>
 </html>

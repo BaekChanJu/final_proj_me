@@ -5,9 +5,11 @@
 
 $(document).ready(function () {
     
+    
+    //1. 국비/부트에서
     //글등록 버튼 아이디
     $("#btn-e").click(function(){
-      alert("버튼잘눌림");
+     alert("글등록 ")
       
       var param = $("#cmtfrm").serializeObject();
       console.log(param);
@@ -21,7 +23,7 @@ $(document).ready(function () {
          dataType: "json",
          
          success : function(data){
-            alert("성공 :" + data);
+           
             console.log(data);
             
             //화면 깔끔히 할라고 입력값을 초기화
@@ -46,9 +48,8 @@ $(document).ready(function () {
             d+= "<div class='course__comment-info float-start'>";
             d+= "<h4>" + value.memIdString + "</h4>";
             d+= "</div>";
-            d+= "<div class='course__comment-info float-start'>";
-            d+= "<fmt:formatDate value=" +  value.reDate + " pattern='yyyy년 MM월 dd일 '/>"
-            d+= "</div>";
+           
+
             d+= "<div class='course__comment-rating float-start float-sm-end'>";
             d+= "<tr>";
             d+= " <td>" + value.star + "";
@@ -98,24 +99,17 @@ $(document).ready(function () {
    })//end of click
    
    
-   
+
   	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	
-  	 
-     $(".zz").click(function(){
-		 alert("zz");
+  	 //2.국비부트에서
+  	 //리뷰 ajax로  페이징
+     $(".ajaxBtn").click(function(){
+		
 		 
-		var param = $("#cmtfrm").serializeObject();
+		 //파라미터로 edId 로 우리가 무슨 학원인지 알수있고
+		 //this로 page 파라미터 넘겼으니 이름 맞퉈서 2개만 맞춰주면 끝
+		var param = { 'vcId' : $('#vcId').val(),
+					'page' : $(this).find('span').text() };
     	console.log(param);
     	 var d="";
 		 
@@ -127,7 +121,7 @@ $(document).ready(function () {
          	data : param,
          	dataType: "json",
          	success : function(data){
-            alert("성공 :" + data);
+          
             console.log(data);
             
              
@@ -148,9 +142,7 @@ $(document).ready(function () {
             d+= "<div class='course__comment-info float-start'>";
             d+= "<h4>" + value.memIdString + "</h4>";
             d+= "</div>";
-            d+= "<div class='course__comment-info float-start'>";
-            d+= "<fmt:formatDate value=" +  value.reDate + " pattern='yyyy년 MM월 dd일 '/>"
-            d+= "</div>";
+           
             d+= "<div class='course__comment-rating float-start float-sm-end'>";
             d+= "<tr>";
             d+= " <td>" + value.star + "";
@@ -186,14 +178,7 @@ $(document).ready(function () {
          });
          
          c+= " </div> ";
-         //--추가해봄
-         //c+= " <div class='row'> "
-         //c+= " <div class='col-xxl-12'> "
-         //c+= "<div class='basic-pagination wow fadeInUp mt-30' data-wow-delay='.2s'>  "
-        
-       
-         
-            
+     
          $("#reviewBox").append(c);      
             
             
@@ -205,9 +190,7 @@ $(document).ready(function () {
  
    
    
-   
-   
-   
+
    
 
 //----------------------------------------------------------------------------------------------------

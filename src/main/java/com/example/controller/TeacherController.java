@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.domain.LectureVO;
+import com.example.domain.MemberVO;
 import com.example.domain.TeacherVO;
 import com.example.persistence.LectureRepository;
 import com.example.persistence.TeacherRepository;
-
+import com.example.service.TeacherService;
 
 @Controller
 @RequestMapping("/lecture")

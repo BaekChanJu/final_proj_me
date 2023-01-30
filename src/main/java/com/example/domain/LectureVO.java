@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -51,6 +50,6 @@ public class LectureVO {
 	//각 교육별 평균 점이 달라야 하기에 추가
 	private Integer avg;
 
-	
+
 
 }

@@ -126,7 +126,7 @@
                                          </ul>
                                       </li>
                                       <li>
-                                         <a href="/chatbot">챗봇</a>
+                                         <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                       </li>
                                    </ul>
                                 </nav>
@@ -196,7 +196,7 @@
                                          </ul>
                                       </li>
                                       <li>
-                                         <a href="/chatbot">챗봇</a>
+                                         <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                       </li>
                                    </ul>
                                 </nav>

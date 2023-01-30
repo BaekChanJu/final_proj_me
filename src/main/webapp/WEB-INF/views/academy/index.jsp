@@ -38,11 +38,13 @@
          <!-- Add your site or application content here -->
 
 
-         <!--0102퀵메뉴 추가-->
-         <div class="quickmenu">
+          <!--0102퀵메뉴 추가-->
+          <div class="quickmenu">
 
             <ul style="text-decoration: none">
-               <li><img src="/assets/img/kakao.png"></li></img>
+               <li id="quickmenu2"><img src="/assets/img/site1.png"></li></img>
+               <li><a href="https://www.facebook.com/code.a.clock"><img src="/assets/img/site2.png"></li></a></img>
+               <li><a href="https://www.instagram.com/p/CoCGYjWB6Xm/?igshid=YmMyMTA2M2Y="><img src="/assets/img/site3.png"></li></a></img>
             </ul>
          </div>
 
@@ -78,7 +80,7 @@
                      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
                         <div class="header__left d-flex">
                            <div class="logo">
-                              <a href="index">
+                              <a href="/startpage">
                                  <img src="/assets/img/logo/logo.png" alt="logo">
                               </a>
                            </div>
@@ -88,9 +90,7 @@
                                     <li>
                                        <a href="course-grid" class="cat-menu d-flex align-items-center">
                                           <div class="cat-dot-icon d-inline-block">
-
                                              <input type="checkbox" id="switch" /><label class="onoff" for="switch">Toggle</label>
-
                                           </div>
 
                                        </a>
@@ -111,22 +111,18 @@
                                  <div class="main-menu main-menu-3">
                                     <nav id="mobile-menu">
                                        <ul>
-                                          <li class="has-dropdown">
-                                             <a>About</a>
-                                             <ul class="submenu">
-                                                <li><a href="/about">로고 소개</a></li>
-                                                <li><a href="/map">지도</a></li>
-                                             </ul>
+                                          <li>
+                                             <a href="/aboutus">AboutUs</a>
                                           </li>
                                           <li class="has-dropdown">
-                                             <a>학원</a>
+                                             <a href="course-grid">강의</a>
                                              <ul class="submenu">
                                                 <li><a href="/academy/course-sidebar">학원 목록</a></li>
                                                 <li><a href="/academy/rank">학원 랭크</a></li>
                                              </ul>
                                           </li>
                                           <li class="has-dropdown">
-                                             <a>게시판</a>
+                                             <a href="">게시판</a>
                                              <ul class="submenu">
                                                 <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                                 <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -135,7 +131,7 @@
                                              </ul>
                                           </li>
                                           <li>
-                                             <a href="/chatbot">챗봇</a>
+                                             <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                           </li>
                                        </ul>
                                     </nav>
@@ -151,12 +147,8 @@
                                     <div class="header__cart">
                                        <a href="javascript:void(0);" class="cart-toggle-btn">
                                           <div class="header__cart-icon">
-                                             <svg viewBox="0 0 24 24">
-                                                <circle class="st0" cx="9" cy="21" r="1" />
-                                                <circle class="st0" cx="20" cy="21" r="1" />
-                                                <path class="st0"
-                                                   d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6" />
-                                             </svg>
+                                             <img src="/assets/img/heart.png" alt="heart">
+
                                           </div>
                                           <span class="cart-item">2</span>
                                        </a>
@@ -179,26 +171,22 @@
                         <c:when test="${not empty sessionScope.memIdInt}">
 
                            <div class="col-xxl-9 col-xl-9 col-lg-6 col-md-7 col-sm-6 col-6">
-                              <div class="eader__center align-items-center d-flex justify-content-center">
+                              <div class="header__center align-items-center d-flex justify-content-center">
                                  <div class="main-menu main-menu-3">
                                     <nav id="mobile-menu">
                                        <ul>
-                                          <li class="has-dropdown">
-                                             <a>About</a>
-                                             <ul class="submenu">
-                                                <li><a href="/about">로고 소개</a></li>
-                                                <li><a href="/map">지도</a></li>
-                                             </ul>
+                                          <li>
+                                             <a href="/aboutus">AboutUs</a>
                                           </li>
                                           <li class="has-dropdown">
-                                             <a>학원</a>
+                                             <a href="course-grid">강의</a>
                                              <ul class="submenu">
                                                 <li><a href="/academy/course-sidebar">학원 목록</a></li>
                                                 <li><a href="/academy/rank">학원 랭크</a></li>
                                              </ul>
                                           </li>
                                           <li class="has-dropdown">
-                                             <a>게시판</a>
+                                             <a href="">게시판</a>
                                              <ul class="submenu">
                                                 <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                                 <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -207,7 +195,7 @@
                                              </ul>
                                           </li>
                                           <li>
-                                             <a href="/chatbot">챗봇</a>
+                                             <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                           </li>
                                        </ul>
                                     </nav>
@@ -219,7 +207,7 @@
                                  <div class="header__search p-relative ml-50 d-none d-md-block">
 
                                     <form id="main" action=/academy/course-sidebar method="GET">
-                                       <input type="text" name="keywords" placeholder="ex)교육과정 및 학원이름 검색">
+                                       <input type="text" name="keywords" placeholder="여기서 검색">
                                        <button type="submit"><i class="fad fa-search"></i></button>
                                     </form>
                                     <!-- 검색 끝-->
@@ -230,20 +218,60 @@
                                     <div class="header__cart">
                                        <a href="javascript:void(0);" class="cart-toggle-btn">
                                           <div class="header__cart-icon">
-                                             <svg viewBox="0 0 24 24">
-                                                <circle class="st0" cx="9" cy="21" r="1" />
-                                                <circle class="st0" cx="20" cy="21" r="1" />
-                                                <path class="st0"
-                                                   d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6" />
-                                             </svg>
+                                             <img src="/assets/img/heart.png" alt="heart"/ >
                                           </div>
                                           <span class="cart-item">2</span>
                                        </a>
                                     </div>
                                  </div>
                                  <div class="header__btn ml-20 d-none d-sm-block">
-                                    <a href="/logoutMember" class="e-btn">로그아웃</a>
+                                   <!--  <div class="usercontainer">
+                                       <div class="usernav">
+                                         <h3>${sessionScope.memIdString}</h3>
+                                         <div class="drop">
+                                          <img class="user" src="/assets/img/user.png" alt="user"style="margin-right: 10px;"/>
+                                           <span class="online"></span>
+                                           <i class="fi-rr-angle-small-down"></i>
+                                         </div>
+                                       </div>
+                                 </div>  -->
+
+                                 <!--마이페이지-->
+                                 <div class="header__category d-none d-lg-block">
+                                    <nav>
+                                       <ul>
+                                          <li>
+                                             <!-- <a href="course-grid" class="cat-menu d-flex align-items-center"> -->
+                                               
+                                                <!-- <span>${sessionScope.memIdString}</span> -->
+                                                <div class="drop">
+                                                   <img class="user" src="/assets/img/user.png" alt="user"style="margin-right: 10px;"/>
+                                                    <span class="online"></span>
+                                                    <i class="fi-rr-angle-small-down"></i>
+                                                  </div>
+
+                                             <!-- </a> -->
+                                             <ul class="cat-submenu">
+                                                <li><h4 style="margin-left: 10px;">${sessionScope.memIdString}님</h4></li>
+                                                <li class="sy" style="margin-left: 10px">${sessionScope.memEmail}</li>
+                                                <hr>
+                                                <li><a href="/mypage/modify">마이페이지</a></li>
+                                                <li><a href="/mypage/myreview">작성글 관리</a></li>
+                                                <li><a href="/mypage/lessonreserve">예약 현황</a></li>
+                                                <li><a href="/logoutMember">로그아웃</a></li>
+                                             </ul>
+                                          </li>
+                                       </ul>
+                                    </nav>
                                  </div>
+
+
+
+
+
+                                 
+                                 
+
                                  <div class="sidebar__menu d-xl-none">
                                     <div class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
                                        <span class="line"></span>
@@ -264,77 +292,77 @@
          </header>
          <!-- header area end -->
 
-         <!-- cart mini area start -->
-         <div class="cartmini__area">
-            <div class="cartmini__wrapper">
-               <div class="cartmini__title">
-                  <h4>Shopping cart</h4>
+      <!-- cart mini area start -->
+      <div class="cartmini__area">
+         <div class="cartmini__wrapper">
+            <div class="cartmini__title">
+               <h4>찜/위시리스트</h4>
+            </div>
+            <div class="cartmini__close">
+               <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+            </div>
+            <div class="cartmini__widget ">
+               <div class="cartmini__inner" style="overflow-x:hidden;">
+                  <ul>
+                     <c:forEach items="${jjimList}" var="wish">
+                     <li>
+                        <div class="cartmini__thumb">
+                           <a href="#">
+                              <img src="/assets/img/lecture/${wish[3]}" alt="">
+                           </a>
+                        </div>
+                        <div class="cartmini__content">
+                           <h5><a href="#">${wish[0]} </a></h5>
+                           <div class="product-quantity mt-10 mb-10">
+                           </div>
+                           <div class="product__sm-price-wrapper">
+                              <span class="product__sm-price">${wish[3]}</span>
+                           </div>
+                        </div>
+                        <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                     </li>
+                     </c:forEach>
+                  </ul>
                </div>
-               <div class="cartmini__close">
-                  <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+               <div class="cartmini__checkout">
+     
+                  <div class="cartmini__checkout-btn">
+                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> 찜 목록 </a>
+                  </div>
                </div>
-               <div class="cartmini__widget ">
-                  <div class="cartmini__inner" style="overflow-x:hidden;">
-                     <ul>
-                        <c:forEach items="${jjimList}" var="wish">
-                        <li>
-                           <div class="cartmini__thumb">
-                              <a href="#">
-                                 <img src="/assets/img/lecture/${wish[3]}" alt="">
-                              </a>
+               <div class="cartmini__inner ">
+                  <ul>
+                     <c:forEach items="${wishList}" var="wish">
+                     <li>
+                        <div class="cartmini__thumb">
+                           <a href="#">
+                              <img src="/assets/img/course/${wish[4]}" alt="">
+                           </a>
+                        </div>
+                        <div class="cartmini__content">
+                           <h5><a href="#">${wish[0]} </a></h5>
+                           <div class="product-quantity mt-10 mb-10">
                            </div>
-                           <div class="cartmini__content">
-                              <h5><a href="#">${wish[0]} </a></h5>
-                              <div class="product-quantity mt-10 mb-10">
-                              </div>
-                              <div class="product__sm-price-wrapper">
-                                 <span class="product__sm-price">${wish[3]}</span>
-                              </div>
+                           <div class="product__sm-price-wrapper">
+                              <span class="product__sm-price">${wish[3]}</span>
                            </div>
-                           <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                        </li>
-                        </c:forEach>
-                     </ul>
-                  </div>
-                  <div class="cartmini__checkout">
-        
-                     <div class="cartmini__checkout-btn">
-                        <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
-                     </div>
-                  </div>
-                  <div class="cartmini__inner ">
-                     <ul>
-                        <c:forEach items="${wishList}" var="wish">
-                        <li>
-                           <div class="cartmini__thumb">
-                              <a href="#">
-                                 <img src="/assets/img/course/${wish[4]}" alt="">
-                              </a>
-                           </div>
-                           <div class="cartmini__content">
-                              <h5><a href="#">${wish[0]} </a></h5>
-                              <div class="product-quantity mt-10 mb-10">
-                              </div>
-                              <div class="product__sm-price-wrapper">
-                                 <span class="product__sm-price">${wish[3]}</span>
-                              </div>
-                           </div>
-                           <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                        </li>
-                        </c:forEach>
-                     </ul>
-                  </div>
-                  <div class="cartmini__checkout">
-        
-                     <div class="cartmini__checkout-btn">
-                        <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
-                     </div>
+                        </div>
+                        <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                     </li>
+                     </c:forEach>
+                  </ul>
+               </div>
+               <div class="cartmini__checkout">
+     
+                  <div class="cartmini__checkout-btn">
+                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> 위시리스트 목록 </a>
                   </div>
                </div>
             </div>
          </div>
-         <div class="body-overlay"></div>
-         <!-- cart mini area end -->
+      </div>
+      <div class="body-overlay"></div>
+      <!-- cart mini area end -->
 
 
          <!-- sidebar area start -->
@@ -425,9 +453,8 @@
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                            <div class="hero__thumb-wrapper mb--120">
                               <div class="hero__thumb-2 scene">
-                                 <img class="hero-big" src="/assets/img/hero/hero-2/hero.png" alt="">
-                                 <img class="hero-shape-purple" src="/assets/img/hero/hero-2/hero-shape-purple.png"
-                                    alt="">
+                                 <img class="hero-big" src="/assets/img/hero/hero-2/hero.gif" alt="">
+                                   
 
                                  <div class="hero__promotion d-flex white-bg layer" data-depth="0.1">
                                     <div class="hero__promotion-icon inspiration mr-10">
@@ -532,15 +559,10 @@
                   <div class="row">
                      <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3">
                         <div class="section__title-wrapper section-padding mb-60 text-center">
-                           <span>memIdInt : ${sessionScope.memIdInt}</span> <br/>
-                           <span>memIdString : ${sessionScope.memIdString}</span>
-
                            <!-- 채팅방연동할라고 찬주가 추가해놓은 히든값-->
                            <input id="memberId" type="hidden" value="${sessionScope.memIdString}"> 
-                           
-                           <h2 class="section__title"><span class="yellow-bg">2023년 1월 <img
-                                    src="/assets/img/shape/yellow-bg-2.png" alt=""></span> 부트캠프 랭킹</h2>
-                           <!--<p>You don't have to struggle alone, you've got our assistance and help.</p>-->
+                           <h2 class="section__title"><span class="yellow-bg">부트캠프 랭킹 TOP3<img
+                                    src="/assets/img/shape/yellow-bg-2.png" alt=""></span> </h2>
                         </div>
                      </div>
                   </div>
@@ -566,15 +588,18 @@
                               </svg>
                            </div>
                             <!-- 랭킹 값을 넣어서 해야함 수정 필요 -->
+                           <c:forEach items="${rankFirst}" var="rank">
                            <div class="services__content">
-                              <h3 class="services__title"><a href="about">SSAFY 삼성청년 SW 아카데미</a></h3>
-                              <p>Arse over tit morish wind up gormless butty.!</p>
+                              <h3 class="services__title"><a href="about">${rank[0]}</a></h3>
+                        
+                              <p><i class="icon_star"></i> ${rank[3]}</p>
 
                               <a href="about" class="link-btn-2">
                                  <i class="far fa-arrow-right"></i>
                                  <i class="far fa-arrow-right"></i>
                               </a>
                            </div>
+                           </c:forEach>
                         </div>
                      </div>
                      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
@@ -597,15 +622,18 @@
                                     d="M256,106.7c-5.9,0-10.7-4.8-10.7-10.7V53.3c0-5.9,4.8-10.7,10.7-10.7s10.7,4.8,10.7,10.7V96  C266.7,101.9,261.9,106.7,256,106.7z" />
                               </svg>
                            </div>
+                           <c:forEach items="${rankSecond}" var="rank">
                            <div class="services__content">
-                              <h3 class="services__title"><a href="about">우아한형제들</a></h3>
-                              <p>Arse over tit morish wind up gormless butty.!</p>
+                              <h3 class="services__title"><a href="about">${rank[0]}</a></h3>
+                              <p><i class="icon_star"></i> ${rank[3]}</p>
+                              
 
                               <a href="about" class="link-btn-2">
                                  <i class="far fa-arrow-right"></i>
                                  <i class="far fa-arrow-right"></i>
                               </a>
                            </div>
+                           </c:forEach>
                         </div>
                      </div>
                      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
@@ -638,15 +666,18 @@
                                  </g>
                               </svg>
                            </div>
+                           <c:forEach items="${rankThird}" var="rank">
                            <div class="services__content">
-                              <h3 class="services__title"><a href="about">네이버부스트캠프</a></h3>
-                              <p>Arse over tit morish wind up gormless butty.!</p>
+                              <h3 class="services__title"><a href="about">${rank[0]}</a></h3>
+                              
+                              <p><i class="icon_star"></i> ${rank[3]}</p>
 
                               <a href="about" class="link-btn-2">
                                  <i class="far fa-arrow-right"></i>
                                  <i class="far fa-arrow-right"></i>
                               </a>
                            </div>
+                           </c:forEach>
                         </div>
                      </div>
                      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
@@ -662,10 +693,10 @@
                               </svg>
                            </div>
                            <div class="services__content">
-                              <h3 class="services__title"><a href="about">Apple 디벨로퍼 아카데미</a></h3>
-                              <p>Arse over tit morish wind up gormless butty.!</p>
+                              <h3 class="services__title"><a href="/academy/rank">랭킹 더보기</a></h3>
+                              <p>국비/부트캠프 랭킹을 더 보고싶다면 클릭!</p>
 
-                              <a href="about" class="link-btn-2">
+                              <a href="/academy/rank" class="link-btn-2">
                                  <i class="far fa-arrow-right"></i>
                                  <i class="far fa-arrow-right"></i>
                               </a>
@@ -774,29 +805,18 @@
          <!-- footer area start -->
          <footer>
             <div class="footer__area grey-bg-2">
-               <div class="footer__top pt-190 pb-40">
+               <div class="footer__top pt-20 pb-0">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                            <div class="footer__widget mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <div class="footer__logo">
-                                    <a href="index">
-                                       <img src="/assets/img/logo/logo.png" alt="">
-                                    </a>
-                                 </div>
+                                 <img src="/assets/img/logo/logo.png" alt="">
                               </div>
                               <div class="footer__widget-body footer__widget-body-2">
-                                 <p>Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson
-                                    plans to best.</p>
+                                 
 
-                                 <div class="footer__social">
-                                    <ul>
-                                       <li><a href="#"><i class="social_facebook"></i></a></li>
-                                       <li><a href="#" class="tw"><i class="social_twitter"></i></a></li>
-                                       <li><a href="#" class="pin"><i class="social_pinterest"></i></a></li>
-                                    </ul>
-                                 </div>
+                                 
                               </div>
                            </div>
                         </div>
@@ -804,19 +824,15 @@
                            class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
                            <div class="footer__widget mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title footer__widget-title-2">Company</h3>
+                                 
                               </div>
                               <div class="footer__widget-body">
                                  <div class="footer__link footer__link-2">
-                                    <ul>
-                                       <li><a href="#">About</a></li>
-                                       <li><a href="#">Courses</a></li>
-                                       <li><a href="#">Events</a></li>
-                                       <li><a href="#">Instructor</a></li>
-                                       <li><a href="#">Career</a></li>
-                                       <li><a href="#">Become a Teacher</a></li>
-                                       <li><a href="#">Contact</a></li>
-                                    </ul>
+                                    <div class="footer__logo">
+                                       <a href="index">
+
+                                       </a>
+                                    </div>
                                  </div>
                               </div>
                            </div>
@@ -824,18 +840,11 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
                            <div class="footer__widget mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title footer__widget-title-2">Platform</h3>
+                                 
                               </div>
                               <div class="footer__widget-body">
                                  <div class="footer__link footer__link-2">
-                                    <ul>
-                                       <li><a href="#">Browse Library</a></li>
-                                       <li><a href="#">Library</a></li>
-                                       <li><a href="#">Partners</a></li>
-                                       <li><a href="#">News & Blogs</a></li>
-                                       <li><a href="#">FAQs</a></li>
-                                       <li><a href="#">Tutorials</a></li>
-                                    </ul>
+                                    
                                  </div>
                               </div>
                            </div>
@@ -843,20 +852,26 @@
                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
                            <div class="footer__widget footer__pl-70 mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title footer__widget-title-2">Subscribe</h3>
+                                 
                               </div>
                               <div class="footer__widget-body">
                                  <div class="footer__subscribe footer__subscribe-2">
                                     <form action="#">
                                        <div class="footer__subscribe-input mb-15">
-                                          <input type="email" placeholder="Your email address">
-                                          <button type="submit">
-                                             <i class="far fa-arrow-right"></i>
-                                             <i class="far fa-arrow-right"></i>
-                                          </button>
+                                          
+                                          <div class="footer__social" style="margin-left: 100px;">
+                                             <ul>
+                                                <li><a href="#"><i class="social_facebook"></i></a></li>
+                                                <li><a href="#" class="tw"><i class="social_twitter"></i></a></li>
+                                                <li><a href="#" class="pin"><i class="social_pinterest"></i></a></li>
+                                             </ul>
+                                          </div>
+                                          
                                        </div>
+                                       
                                     </form>
-                                    <p>Get the latest news and updates right at your inbox.</p>
+                                    
+                                    
                                  </div>
                               </div>
                            </div>
@@ -869,7 +884,7 @@
                      <div class="row">
                         <div class="col-xxl-12">
                            <div class="footer__copyright footer__copyright-2 text-center">
-                              <p>© 2022 Educal, All Rights Reserved. Design By <a href="index">Theme Pure</a></p>
+                              <p>Shout out to Soyun Kim <a href="">By BK jeon</a></p>
                            </div>
                         </div>
                      </div>
@@ -878,6 +893,7 @@
             </div>
          </footer>
          <!-- footer area end -->
+
          <!-- JS here -->
          <script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
          <script src="/assets/js/vendor/waypoints.min.js"></script>

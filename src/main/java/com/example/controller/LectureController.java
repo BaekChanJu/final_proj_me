@@ -92,16 +92,14 @@ public class LectureController {
 	@GetMapping("/lecture-details")
 	public String getBoard(LectureVO vo, Model model,
 			@RequestParam(required = false, defaultValue = "") String vcId,
-			@PageableDefault(size = 3, direction = Sort.Direction.DESC) Pageable paging,
+			@PageableDefault(size = 4, direction = Sort.Direction.DESC) Pageable paging,
 			Integer teacherId){
 
 		//기본 학원디테일 정보
 		LectureVO result = lectureService.getBoard(vo);
 		String[] a = result.getVc_content().split("\\+");
-		
 		model.addAttribute("title", a);
 		model.addAttribute("lecture", result); // Model 정보 저장   
-		System.out.println("lecture값 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ " + result);
 		model.addAttribute("vcPic", result.getVc_pic());
 		System.out.println("re 값 확인:"+ vcId);
 		
@@ -109,7 +107,6 @@ public class LectureController {
 		//이교육의 선생님 정보를 출력하기 위함으로 추가함
 		TeacherVO result2 = teacherRepository.findByTeacherId(teacherId);
 		model.addAttribute("tListDetails", result2);
-		
 
 		String temp_vc_id = String.valueOf(vo.getVcId());
 		System.out.println(temp_vc_id);
@@ -126,8 +123,6 @@ public class LectureController {
 		int endBlockPage = startBlockPage+pageBlock-1; //6+5-1=10. 6,7,8,9,10해서 10.
 		endBlockPage= totalPages<endBlockPage? totalPages:endBlockPage;
 
-		
-		
 		//리스트,상세페이지 별점정보용
 		List<Object[]>avg = reviewService.avgStarvc();  // List<HashMap>
 		// 반복문
@@ -137,10 +132,6 @@ public class LectureController {
 		}
 		model.addAttribute("avg", avg);
 
-		
-		
-		
-		
 		//각 값들을 jsp 파일에 붙이기
 		model.addAttribute("pageNumber", pageNumber);
 		model.addAttribute("totalPages", totalPages);

@@ -66,7 +66,7 @@
                   <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
                      <div class="header__left d-flex">
                         <div class="logo">
-                           <a href="index">
+                           <a href="/startpage">
                               <img src="/assets/img/logo/logo.png" alt="logo">
                            </a>
                         </div>
@@ -76,13 +76,11 @@
                                  <li>
                                     <a href="course-grid" class="cat-menu d-flex align-items-center">
                                        <div class="cat-dot-icon d-inline-block">
-                                        
                                           <input type="checkbox" id="switch" /><label class="onoff" for="switch">Toggle</label>
-
                                        </div>
-                                   
+
                                     </a>
-                                    
+
                                  </li>
                               </ul>
                            </nav>
@@ -92,29 +90,25 @@
 
                   <!-- JSTL if : 로그인, 로그아웃된 상태 구분-->
                   <c:choose>
-							<c:when test="${empty sessionScope.memIdInt}">
+                     <c:when test="${empty sessionScope.memIdInt}">
 
                         <div class="col-xxl-9 col-xl-9 col-lg-6 col-md-7 col-sm-6 col-6">
                            <div class="eader__center align-items-center d-flex justify-content-center">
                               <div class="main-menu main-menu-3">
                                  <nav id="mobile-menu">
                                     <ul>
+                                       <li>
+                                          <a href="/aboutus">AboutUs</a>
+                                       </li>
                                        <li class="has-dropdown">
-                                          <a href="/about">About</a>
+                                          <a href="course-grid">강의</a>
                                           <ul class="submenu">
-                                             <li><a href="/about">소개</a></li>
-                                             <li><a href="/map">지도</a></li>
+                                                <li><a href="/lecture/tutor">튜터 목록</a></li>
+                                                <li><a href="/lecture/lecture-sidebar">강의 목록</a></li>
                                           </ul>
                                        </li>
                                        <li class="has-dropdown">
-                                          <a>화상</a>
-                                          <ul class="submenu">
-                                             <li><a href="/lecture/tutor">선생님</a></li>
-                                             <li><a href="/lecture/lecture-sidebar">강의</a></li>
-                                          </ul>
-                                       </li>
-                                       <li class="has-dropdown">
-                                          <a>게시판</a>
+                                          <a href="">게시판</a>
                                           <ul class="submenu">
                                              <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                              <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -123,27 +117,24 @@
                                           </ul>
                                        </li>
                                        <li>
-                                          <a href="/chatbot">챗봇</a>
+                                          <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                        </li>
                                     </ul>
                                  </nav>
                               </div>
 
-
-
                               <div class="header__search p-relative ml-50 d-none d-md-block">
-                                 <form action= /lecture/lecture-sidebar method="GET" role="search">
-                                    <input type="text" name ="keywords" placeholder="ex)수업명 검색">
+
+                                 <!--맨위 검색부분임-->
+                                 <form action= /academy/course-sidebar method="GET" role="search">
+                                    <input type="text" name ="keywords" placeholder="Search...">
                                     <button type="submit"><i class="fad fa-search"></i></button>
                                  </form>
                                  <div class="header__cart">
                                     <a href="javascript:void(0);" class="cart-toggle-btn">
                                        <div class="header__cart-icon">
-                                          <svg viewBox="0 0 24 24">
-                                             <circle class="st0" cx="9" cy="21" r="1"/>
-                                             <circle class="st0" cx="20" cy="21" r="1"/>
-                                             <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
-                                          </svg>
+                                          <img src="/assets/img/heart.png" alt="heart">
+
                                        </div>
                                        <span class="cart-item">2</span>
                                     </a>
@@ -163,29 +154,25 @@
                         </div>
 
                      </c:when>
-							<c:when test="${not empty sessionScope.memIdInt}">
+                     <c:when test="${not empty sessionScope.memIdInt}">
 
                         <div class="col-xxl-9 col-xl-9 col-lg-6 col-md-7 col-sm-6 col-6">
-                           <div class="eader__center align-items-center d-flex justify-content-center">
+                           <div class="header__center align-items-center d-flex justify-content-center">
                               <div class="main-menu main-menu-3">
                                  <nav id="mobile-menu">
                                     <ul>
+                                       <li>
+                                          <a href="/aboutus">AboutUs</a>
+                                       </li>
                                        <li class="has-dropdown">
-                                          <a href="/about">About</a>
+                                          <a href="course-grid">강의</a>
                                           <ul class="submenu">
-                                             <li><a href="/about">소개</a></li>
-                                             <li><a href="/map">지도</a></li>
+                                                <li><a href="/lecture/tutor">튜터 목록</a></li>
+                                                <li><a href="/lecture/lecture-sidebar">강의 목록</a></li>
                                           </ul>
                                        </li>
                                        <li class="has-dropdown">
-                                          <a>화상</a>
-                                          <ul class="submenu">
-                                             <li><a href="/lecture/tutor">선생님</a></li>
-                                             <li><a href="/lecture/lecture-sidebar">강의</a></li>
-                                          </ul>
-                                       </li>
-                                       <li class="has-dropdown">
-                                          <a>게시판</a>
+                                          <a href="">게시판</a>
                                           <ul class="submenu">
                                              <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                              <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -194,33 +181,83 @@
                                           </ul>
                                        </li>
                                        <li>
-                                          <a href="/chatbot">챗봇</a>
+                                          <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                        </li>
                                     </ul>
                                  </nav>
                               </div>
-                              
-                              
+                              <!-- 0103 찬주2
+                              메인화면에서의 검색기능과 동일한 부분 
+                           -->
 
-                              
+                              <div class="header__search p-relative ml-50 d-none d-md-block">
 
-                                 
+                                 <form id="main" action=/academy/course-sidebar method="GET">
+                                    <input type="text" name="keywords" placeholder="여기서 검색">
+                                    <button type="submit"><i class="fad fa-search"></i></button>
+                                 </form>
+                                 <!-- 검색 끝-->
+
+
+
+
                                  <div class="header__cart">
                                     <a href="javascript:void(0);" class="cart-toggle-btn">
                                        <div class="header__cart-icon">
-                                          <svg viewBox="0 0 24 24">
-                                             <circle class="st0" cx="9" cy="21" r="1"/>
-                                             <circle class="st0" cx="20" cy="21" r="1"/>
-                                             <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
-                                          </svg>
+                                          <img src="/assets/img/heart.png" alt="heart"/ >
                                        </div>
                                        <span class="cart-item">2</span>
                                     </a>
                                  </div>
                               </div>
                               <div class="header__btn ml-20 d-none d-sm-block">
-                                 <a href="/logoutMember" class="e-btn">로그아웃</a>
+                                <!--  <div class="usercontainer">
+                                    <div class="usernav">
+                                      <h3>${sessionScope.memIdString}</h3>
+                                      <div class="drop">
+                                       <img class="user" src="/assets/img/user.png" alt="user"style="margin-right: 10px;"/>
+                                        <span class="online"></span>
+                                        <i class="fi-rr-angle-small-down"></i>
+                                      </div>
+                                    </div>
+                              </div>  -->
+
+                              <!--마이페이지-->
+                              <div class="header__category d-none d-lg-block">
+                                 <nav>
+                                    <ul>
+                                       <li>
+                                          <!-- <a href="course-grid" class="cat-menu d-flex align-items-center"> -->
+                                            
+                                             <!-- <span>${sessionScope.memIdString}</span> -->
+                                             <div class="drop">
+                                                <img class="user" src="/assets/img/user.png" alt="user"style="margin-right: 10px;"/>
+                                                 <span class="online"></span>
+                                                 <i class="fi-rr-angle-small-down"></i>
+                                               </div>
+
+                                          <!-- </a> -->
+                                          <ul class="cat-submenu">
+                                             <li><h4 style="margin-left: 10px;">${sessionScope.memIdString}님</h4></li>
+                                             <li class="sy" style="margin-left: 10px">${sessionScope.memEmail}</li>
+                                             <hr>
+                                             <li><a href="/mypage/modify">마이페이지</a></li>
+                                             <li><a href="/mypage/myreview">작성글 관리</a></li>
+                                             <li><a href="/mypage/lessonreserve">예약 현황</a></li>
+                                             <li><a href="/logoutMember">로그아웃</a></li>
+                                          </ul>
+                                       </li>
+                                    </ul>
+                                 </nav>
                               </div>
+
+
+
+
+
+                              
+                              
+
                               <div class="sidebar__menu d-xl-none">
                                  <div class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
                                     <span class="line"></span>
@@ -232,7 +269,7 @@
                         </div>
 
                      </c:when>
-						</c:choose>
+                  </c:choose>
                   <!-- JSTL c:when 끝-->
 
                </div>
@@ -241,77 +278,77 @@
       </header>
       <!-- header area end -->
 
-      <!-- cart mini area start -->
-      <div class="cartmini__area">
-         <div class="cartmini__wrapper">
-            <div class="cartmini__title">
-               <h4>Shopping cart</h4>
+   <!-- cart mini area start -->
+   <div class="cartmini__area">
+      <div class="cartmini__wrapper">
+         <div class="cartmini__title">
+            <h4>Shopping cart</h4>
+         </div>
+         <div class="cartmini__close">
+            <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="cartmini__widget ">
+            <div class="cartmini__inner" style="overflow-x:hidden;">
+               <ul>
+                  <c:forEach items="${jjimList}" var="wish">
+                  <li>
+                     <div class="cartmini__thumb">
+                        <a href="#">
+                           <img src="/assets/img/lecture/${wish[3]}" alt="">
+                        </a>
+                     </div>
+                     <div class="cartmini__content">
+                        <h5><a href="#">${wish[0]} </a></h5>
+                        <div class="product-quantity mt-10 mb-10">
+                        </div>
+                        <div class="product__sm-price-wrapper">
+                           <span class="product__sm-price">${wish[3]}</span>
+                        </div>
+                     </div>
+                     <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                  </li>
+                  </c:forEach>
+               </ul>
             </div>
-            <div class="cartmini__close">
-               <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+            <div class="cartmini__checkout">
+  
+               <div class="cartmini__checkout-btn">
+                  <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
+               </div>
             </div>
-            <div class="cartmini__widget ">
-               <div class="cartmini__inner" style="overflow-x:hidden;">
-                  <ul>
-                     <c:forEach items="${jjimList}" var="wish">
-                     <li>
-                        <div class="cartmini__thumb">
-                           <a href="#">
-                              <img src="/assets/img/lecture/${wish[3]}" alt="">
-                           </a>
+            <div class="cartmini__inner ">
+               <ul>
+                  <c:forEach items="${wishList}" var="wish">
+                  <li>
+                     <div class="cartmini__thumb">
+                        <a href="#">
+                           <img src="/assets/img/course/${wish[4]}" alt="">
+                        </a>
+                     </div>
+                     <div class="cartmini__content">
+                        <h5><a href="#">${wish[0]} </a></h5>
+                        <div class="product-quantity mt-10 mb-10">
                         </div>
-                        <div class="cartmini__content">
-                           <h5><a href="#">${wish[0]} </a></h5>
-                           <div class="product-quantity mt-10 mb-10">
-                           </div>
-                           <div class="product__sm-price-wrapper">
-                              <span class="product__sm-price">${wish[3]}</span>
-                           </div>
+                        <div class="product__sm-price-wrapper">
+                           <span class="product__sm-price">${wish[3]}</span>
                         </div>
-                        <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                     </li>
-                     </c:forEach>
-                  </ul>
-               </div>
-               <div class="cartmini__checkout">
-     
-                  <div class="cartmini__checkout-btn">
-                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
-                  </div>
-               </div>
-               <div class="cartmini__inner ">
-                  <ul>
-                     <c:forEach items="${wishList}" var="wish">
-                     <li>
-                        <div class="cartmini__thumb">
-                           <a href="#">
-                              <img src="/assets/img/course/${wish[4]}" alt="">
-                           </a>
-                        </div>
-                        <div class="cartmini__content">
-                           <h5><a href="#">${wish[0]} </a></h5>
-                           <div class="product-quantity mt-10 mb-10">
-                           </div>
-                           <div class="product__sm-price-wrapper">
-                              <span class="product__sm-price">${wish[3]}</span>
-                           </div>
-                        </div>
-                        <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                     </li>
-                     </c:forEach>
-                  </ul>
-               </div>
-               <div class="cartmini__checkout">
-     
-                  <div class="cartmini__checkout-btn">
-                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
-                  </div>
+                     </div>
+                     <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                  </li>
+                  </c:forEach>
+               </ul>
+            </div>
+            <div class="cartmini__checkout">
+  
+               <div class="cartmini__checkout-btn">
+                  <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
                </div>
             </div>
          </div>
       </div>
-      <div class="body-overlay"></div>
-      <!-- cart mini area end -->
+   </div>
+   <div class="body-overlay"></div>
+   <!-- cart mini area end -->
 
 
       <!-- sidebar area start -->
@@ -1128,76 +1165,39 @@
          </section>
          <!-- pricing area end -->
 
-         <!-- cta area start -->
-         <section class="cta__area mb--120">
-            <div class="container">
-               <div class="cta__inner blue-bg fix">
-                  <div class="cta__shape">
-                     <img src="/assets/img/cta/cta-shape.png" alt="">
-                  </div>
-                  <div class="row align-items-center">
-                     <div class="col-xxl-7 col-xl-7 col-lg-8 col-md-8">
-                        <div class="cta__content">
-                           <h3 class="cta__title">You can be your own Guiding star with our help</h3>
-                        </div>
-                     </div>
-                     <div class="col-xxl-5 col-xl-5 col-lg-4 col-md-4">
-                        <div class="cta__more d-md-flex justify-content-end p-relative z-index-1">
-                           <a href="contact.html" class="e-btn e-btn-white">Get Started</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- cta area end -->
-
       </main>
 
          <!-- footer area start -->
          <footer>
-            <div class="footer__area footer-bg">
-               <div class="footer__top pt-190 pb-40">
+            <div class="footer__area grey-bg-2">
+               <div class="footer__top pt-20 pb-0">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
                            <div class="footer__widget mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <div class="footer__logo">
-                                    <a href="index.html">
-                                       <img src="/assets/img/logo/logo-2.png" alt="">
-                                    </a>
-                                 </div>
+                                 <img src="/assets/img/logo/logo.png" alt="">
                               </div>
-                              <div class="footer__widget-body">
-                                 <p>Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.</p>
+                              <div class="footer__widget-body footer__widget-body-2">
+                                 
 
-                                 <div class="footer__social">
-                                    <ul>
-                                       <li><a href="#"><i class="social_facebook"></i></a></li>
-                                       <li><a href="#" class="tw"><i class="social_twitter"></i></a></li>
-                                       <li><a href="#" class="pin"><i class="social_pinterest"></i></a></li>
-                                    </ul>
-                                 </div>
+                                 
                               </div>
                            </div>
                         </div>
-                        <div class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
+                        <div
+                           class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
                            <div class="footer__widget mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title">Company</h3>
+                                 
                               </div>
                               <div class="footer__widget-body">
-                                 <div class="footer__link">
-                                    <ul>
-                                       <li><a href="#">About</a></li>
-                                       <li><a href="#">Courses</a></li>
-                                       <li><a href="#">Events</a></li>
-                                       <li><a href="#">Instructor</a></li>
-                                       <li><a href="#">Career</a></li>
-                                       <li><a href="#">Become a Teacher</a></li>
-                                       <li><a href="#">Contact</a></li>
-                                    </ul>
+                                 <div class="footer__link footer__link-2">
+                                    <div class="footer__logo">
+                                       <a href="index">
+
+                                       </a>
+                                    </div>
                                  </div>
                               </div>
                            </div>
@@ -1205,18 +1205,11 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
                            <div class="footer__widget mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title">Platform</h3>
+                                 
                               </div>
                               <div class="footer__widget-body">
-                                 <div class="footer__link">
-                                    <ul>
-                                       <li><a href="#">Browse Library</a></li>
-                                       <li><a href="#">Library</a></li>
-                                       <li><a href="#">Partners</a></li>
-                                       <li><a href="#">News & Blogs</a></li>
-                                       <li><a href="#">FAQs</a></li>
-                                       <li><a href="#">Tutorials</a></li>
-                                    </ul>
+                                 <div class="footer__link footer__link-2">
+                                    
                                  </div>
                               </div>
                            </div>
@@ -1224,20 +1217,26 @@
                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
                            <div class="footer__widget footer__pl-70 mb-50">
                               <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title">Subscribe</h3>
+                                 
                               </div>
                               <div class="footer__widget-body">
-                                 <div class="footer__subscribe">
+                                 <div class="footer__subscribe footer__subscribe-2">
                                     <form action="#">
                                        <div class="footer__subscribe-input mb-15">
-                                          <input type="email" placeholder="Your email address">
-                                          <button type="submit">
-                                             <i class="far fa-arrow-right"></i>
-                                             <i class="far fa-arrow-right"></i>
-                                          </button>
+                                          
+                                          <div class="footer__social" style="margin-left: 100px;">
+                                             <ul>
+                                                <li><a href="#"><i class="social_facebook"></i></a></li>
+                                                <li><a href="#" class="tw"><i class="social_twitter"></i></a></li>
+                                                <li><a href="#" class="pin"><i class="social_pinterest"></i></a></li>
+                                             </ul>
+                                          </div>
+                                          
                                        </div>
+                                       
                                     </form>
-                                    <p>Get the latest news and updates right at your inbox.</p>
+                                    
+                                    
                                  </div>
                               </div>
                            </div>
@@ -1245,12 +1244,12 @@
                      </div>
                   </div>
                </div>
-               <div class="footer__bottom">
+               <div class="footer__bottom footer__bottom-2">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-12">
-                           <div class="footer__copyright text-center">
-                              <p>© 2022 Educal, All Rights Reserved. Design By <a href="index.html">Theme Pure</a></p>
+                           <div class="footer__copyright footer__copyright-2 text-center">
+                              <p>Shout out to Soyun Kim <a href="">By BK jeon</a></p>
                            </div>
                         </div>
                      </div>
@@ -1259,6 +1258,7 @@
             </div>
          </footer>
          <!-- footer area end -->
+
       <!-- JS here -->
       <script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
       <script src="/assets/js/vendor/waypoints.min.js"></script>
