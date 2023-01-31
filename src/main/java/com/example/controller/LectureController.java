@@ -92,7 +92,7 @@ public class LectureController {
 	@GetMapping("/lecture-details")
 	public String getBoard(LectureVO vo, Model model,
 			@RequestParam(required = false, defaultValue = "") String vcId,
-			@PageableDefault(size = 4, direction = Sort.Direction.DESC) Pageable paging,
+			@PageableDefault(size = 3, direction = Sort.Direction.DESC) Pageable paging,
 			Integer teacherId){
 
 		//기본 학원디테일 정보

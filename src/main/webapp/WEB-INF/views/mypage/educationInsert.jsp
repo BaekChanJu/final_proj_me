@@ -121,21 +121,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                            <img src="/assets/img/logo/logo.png" alt="logo">
                         </a>
                      </div>
-                     <div class="header__category d-none d-lg-block">
-                        <nav>
-                           <ul>
-                              <li>
-                                 <a href="course-grid" class="cat-menu d-flex align-items-center">
-                                    <div class="cat-dot-icon d-inline-block">
-                                       <input type="checkbox" id="switch" /><label class="onoff" for="switch">Toggle</label>
-                                    </div>
-
-                                 </a>
-
-                              </li>
-                           </ul>
-                        </nav>
-                     </div>
+               
                   </div>
                </div>
 
@@ -152,7 +138,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                        <a href="/aboutus">AboutUs</a>
                                     </li>
                                     <li class="has-dropdown">
-                                       <a href="course-grid">학원/강의</a>
+                                       <a href="/academy/course-sidebar">학원/강의</a>
                                        <ul class="submenu">
                                              <li><a href="/academy/course-sidebar">학원 목록</a></li>
                                              <li><a href="/academy/rank">학원 랭크</a></li>
@@ -161,7 +147,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                        </ul>
                                     </li>
                                     <li class="has-dropdown">
-                                       <a href="">게시판</a>
+                                       <a href="/board/honestQuestionList">게시판</a>
                                        <ul class="submenu">
                                           <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -218,7 +204,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                        <a href="/aboutus">AboutUs</a>
                                     </li>
                                     <li class="has-dropdown">
-                                       <a href="course-grid">학원/강의</a>
+                                       <a href="/academy/course-sidebar">학원/강의</a>
                                        <ul class="submenu">
                                              <li><a href="/academy/course-sidebar">학원 목록</a></li>
                                              <li><a href="/academy/rank">학원 랭크</a></li>
@@ -227,7 +213,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                        </ul>
                                     </li>
                                     <li class="has-dropdown">
-                                       <a href="">게시판</a>
+                                       <a href="/board/honestQuestionList">게시판</a>
                                        <ul class="submenu">
                                           <li><a href="/board/honestQuestionList">솔직 답변</a></li>
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
@@ -460,11 +446,11 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="row">
             <div class="col-xxl-12">
               <div class="page__title-wrapper mt-110">
-                <h3 class="page__title">My Wishlist</h3>
+                <h3 class="page__title">국비 / 부트캠프 등록</h3>
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                    <li class="breadcrumb-item"><a href="/startpage">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">학원등록</li>
                   </ol>
                 </nav>
               </div>
@@ -499,7 +485,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                     aria-expanded="true"
                     aria-controls="collapseOne"
                   >
-                    <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
+                    <i class="fas fa-fw fa-address-card"></i> <span>회원정보 관리</span>
                   </a>
                   <div
                     id="collapseOne"
@@ -534,7 +520,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                     <div class="bg-white py-2 collapse-inner rounded">
                       <a class="collapse-item" href="/mypage/myreview">국비/부트 리뷰</a><br />
                       <a class="collapse-item" href="/mypage/myreview2">화상/교육 리뷰</a><br />
-                      <a class="collapse-item" href="/mypage/honestAnswer">솔직 답변</a>
+                     
                     </div>
                   </div>
                 </li>
@@ -552,8 +538,8 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                   </a>
                   <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                      <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
-                      <a class="collapse-item" href="/mypage/jjimlist">관심강의리스트</a>
+                      <a class="collapse-item" href="/mypage/wishlist">관심학원 리스트</a><br/> 
+                      <a class="collapse-item" href="/mypage/jjimlist">관심강의 리스트</a>
                     </div>
                   </div>
                 </li>

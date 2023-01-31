@@ -218,7 +218,7 @@ public class MypageController {
 		model.addAttribute("totalPages", totalPages);
 		model.addAttribute("startBlockPage", startBlockPage);
 		model.addAttribute("endBlockPage", endBlockPage);
-		model.addAttribute("mypageReviewList1", mypageReviewList2.getContent()); 
+		model.addAttribute("mypageReviewList2", mypageReviewList2.getContent()); 
 
 
 		return "mypage/myreview2";
