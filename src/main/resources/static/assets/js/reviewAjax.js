@@ -9,9 +9,16 @@ $(document).ready(function () {
     //1. 국비/부트에서
     //글등록 버튼 아이디
     $("#btn-e").click(function(){
-     alert("글등록 ")
-      
-      var param = $("#cmtfrm").serializeObject();
+     // alert("글등록 ")
+     
+     let idOrNot = $('#memIdInt').val();
+     
+     console.log("idOrNot : "+idOrNot)
+     
+     if(idOrNot === '') {
+		 alert('로그인해야 이용할 수 있는 페이지입니다.');
+	 } else {
+		var param = $("#cmtfrm").serializeObject();
       console.log(param);
       
       var d="";
@@ -95,6 +102,8 @@ $(document).ready(function () {
          }
    
       })//end of aJax
+      
+	 }
       
    })//end of click
    
@@ -186,13 +195,9 @@ $(document).ready(function () {
          
 		 })//ajax
 	 })
-
-
-
-
-
-
- //2.국비부트에서
+	 
+	 
+	 //3.국비부트에서
   	 //리뷰 ajax로  페이징
      $(".ajaxBtn").click(function(){
 		
@@ -278,6 +283,7 @@ $(document).ready(function () {
 		 })//ajax
 	 })
 
+
  
    
    
@@ -306,6 +312,24 @@ $(document).ready(function () {
     return obj;
 	};
 //----------------------------------------------------------------------------------------------------
+
+	// 강의 예약하기 버튼 눌렀을 때
+	$('#schedule-btn').click(function(e){
+		
+		let idOrNot = $('#memIdInt').val();
+	     
+		if(idOrNot === '') {
+			//e.preventdefault()
+			alert('로그인해야 이용할 수 있는 페이지입니다.');
+			location.href="/sign-in"
+		} else {
+			let teachid = $('#teachid').val();
+			let vcId = $('#vcId').val();
+			
+			location.href = `calendar?tId=${teachid}&vcId=${vcId}`;
+		}
+		 
+	});
    
    
    

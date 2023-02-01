@@ -75,13 +75,10 @@
                            <nav>
                               <ul>
                                  <li>
-                                    <a href="course-grid" class="cat-menu d-flex align-items-center">
-                                       <div class="cat-dot-icon d-inline-block">
-                                          <input type="checkbox" id="switch" /><label class="onoff" for="switch">Toggle</label>
-                                       </div>
-
-                                    </a>
-
+                                    <div class="cat-dot-icon d-inline-block">
+                                       <input type="checkbox" id="switch" />
+                                       <label class="onoff" for="switch">Toggle</label>
+                                    </div>
                                  </li>
                               </ul>
                            </nav>
@@ -102,23 +99,23 @@
                                           <a href="/aboutus">AboutUs</a>
                                        </li>
                                        <li class="has-dropdown">
-                                          <a href="course-grid">강의</a>
+                                          <a href="course-grid">학원/강의</a>
                                           <ul class="submenu">
-                                             <li><a href="/academy/course-sidebar">학원 목록</a></li>
-                                             <li><a href="/academy/rank">학원 랭크</a></li>
+                                                <li><a href="/academy/course-sidebar">학원 목록</a></li>
+                                                <li><a href="/academy/rank">학원 랭크</a></li>
                                           </ul>
                                        </li>
                                        <li class="has-dropdown">
                                           <a href="">게시판</a>
                                           <ul class="submenu">
-                                             <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                             
                                              <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                              <li><a href="/board/newsList">뉴스</a></li>
                                              <li><a href="/board/announcement">공지</a></li>
                                           </ul>
                                        </li>
                                        <li>
-                                          <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                          <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                        </li>
                                     </ul>
                                  </nav>
@@ -131,15 +128,15 @@
                                     <input type="text" name ="keywords" placeholder="Search...">
                                     <button type="submit"><i class="fad fa-search"></i></button>
                                  </form>
-                                 <div class="header__cart">
+                                 <!-- <div class="header__cart">
                                     <a href="javascript:void(0);" class="cart-toggle-btn">
                                        <div class="header__cart-icon">
                                           <img src="/assets/img/heart.png" alt="heart">
 
                                        </div>
-                                       <span class="cart-item">2</span>
+                                       <span class="cart-item">!</span>
                                     </a>
-                                 </div>
+                                 </div> -->
                               </div>
                               <div class="header__btn ml-20 d-none d-sm-block">
                                  <a href="/sign-in" class="e-btn">로그인</a>
@@ -166,23 +163,23 @@
                                           <a href="/aboutus">AboutUs</a>
                                        </li>
                                        <li class="has-dropdown">
-                                          <a href="course-grid">강의</a>
+                                          <a href="">학원/강의</a>
                                           <ul class="submenu">
-                                             <li><a href="/academy/course-sidebar">학원 목록</a></li>
-                                             <li><a href="/academy/rank">학원 랭크</a></li>
+                                                <li><a href="/academy/course-sidebar">학원 목록</a></li>
+                                                <li><a href="/academy/rank">학원 랭크</a></li>
                                           </ul>
                                        </li>
                                        <li class="has-dropdown">
                                           <a href="">게시판</a>
                                           <ul class="submenu">
-                                             <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                             
                                              <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                              <li><a href="/board/newsList">뉴스</a></li>
                                              <li><a href="/board/announcement">공지</a></li>
                                           </ul>
                                        </li>
                                        <li>
-                                          <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                          <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                        </li>
                                     </ul>
                                  </nav>
@@ -207,7 +204,7 @@
                                        <div class="header__cart-icon">
                                           <img src="/assets/img/heart.png" alt="heart"/ >
                                        </div>
-                                       <span class="cart-item">2</span>
+                                       <span class="cart-item">!</span>
                                     </a>
                                  </div>
                               </div>
@@ -279,77 +276,77 @@
       </header>
       <!-- header area end -->
 
-   <!-- cart mini area start -->
-   <div class="cartmini__area">
-      <div class="cartmini__wrapper">
-         <div class="cartmini__title">
-            <h4>찜/위시리스트</h4>
-         </div>
-         <div class="cartmini__close">
-            <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
-         </div>
-         <div class="cartmini__widget ">
-            <div class="cartmini__inner" style="overflow-x:hidden;">
-               <ul>
-                  <c:forEach items="${jjimList}" var="wish">
-                  <li>
-                     <div class="cartmini__thumb">
-                        <a href="#">
-                           <img src="/assets/img/lecture/${wish[3]}" alt="">
-                        </a>
-                     </div>
-                     <div class="cartmini__content">
-                        <h5><a href="#">${wish[0]} </a></h5>
-                        <div class="product-quantity mt-10 mb-10">
-                        </div>
-                        <div class="product__sm-price-wrapper">
-                           <span class="product__sm-price">${wish[3]}</span>
-                        </div>
-                     </div>
-                     <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                  </li>
-                  </c:forEach>
-               </ul>
+      <!-- cart mini area start -->
+      <div class="cartmini__area">
+         <div class="cartmini__wrapper">
+            <div class="cartmini__title">
+               <h4>찜/위시리스트</h4>
             </div>
-            <div class="cartmini__checkout">
-  
-               <div class="cartmini__checkout-btn">
-                  <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> 찜 목록 </a>
+            <div class="cartmini__close">
+               <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+            </div>
+            <div class="cartmini__widget ">
+               <div class="cartmini__inner" style="overflow-x:hidden;">
+                  <ul>
+                     <c:forEach items="${jjimList}" var="wish">
+                     <li>
+                        <div class="cartmini__thumb">
+                           <a href="#">
+                              <img src="/assets/img/lecture/${wish[3]}" alt="">
+                           </a>
+                        </div>
+                        <div class="cartmini__content">
+                           <h5><a href="#">${wish[0]} </a></h5>
+                           <div class="product-quantity mt-10 mb-10">
+                           </div>
+                           <div class="product__sm-price-wrapper">
+                              <span class="product__sm-price">${wish[3]}</span>
+                           </div>
+                        </div>
+                        <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                     </li>
+                     </c:forEach>
+                  </ul>
                </div>
-            </div>
-            <div class="cartmini__inner ">
-               <ul>
-                  <c:forEach items="${wishList}" var="wish">
-                  <li>
-                     <div class="cartmini__thumb">
-                        <a href="#">
-                           <img src="/assets/img/course/${wish[4]}" alt="">
-                        </a>
-                     </div>
-                     <div class="cartmini__content">
-                        <h5><a href="#">${wish[0]} </a></h5>
-                        <div class="product-quantity mt-10 mb-10">
+               <div class="cartmini__checkout">
+     
+                  <div class="cartmini__checkout-btn">
+                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span>찜 목록</a>
+                  </div>
+               </div>
+               <div class="cartmini__inner ">
+                  <ul>
+                     <c:forEach items="${wishList}" var="wish">
+                     <li>
+                        <div class="cartmini__thumb">
+                           <a href="#">
+                              <img src="/assets/img/course/${wish[4]}" alt="">
+                           </a>
                         </div>
-                        <div class="product__sm-price-wrapper">
-                           <span class="product__sm-price">${wish[3]}</span>
+                        <div class="cartmini__content">
+                           <h5><a href="#">${wish[0]} </a></h5>
+                           <div class="product-quantity mt-10 mb-10">
+                           </div>
+                           <div class="product__sm-price-wrapper">
+                              <span class="product__sm-price">${wish[3]}</span>
+                           </div>
                         </div>
-                     </div>
-                     <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                  </li>
-                  </c:forEach>
-               </ul>
-            </div>
-            <div class="cartmini__checkout">
-  
-               <div class="cartmini__checkout-btn">
-                  <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> 위시리스트 목록 </a>
+                        <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                     </li>
+                     </c:forEach>
+                  </ul>
+               </div>
+               <div class="cartmini__checkout">
+     
+                  <div class="cartmini__checkout-btn">
+                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span>위시리스트 목록</a>
+                  </div>
                </div>
             </div>
          </div>
       </div>
-   </div>
-   <div class="body-overlay"></div>
-   <!-- cart mini area end -->
+      <div class="body-overlay"></div>
+      <!-- cart mini area end -->
 
 
       <!-- sidebar area start -->
@@ -384,7 +381,7 @@
                            <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
                         </svg>
                      </div>
-                     <span class="cart-item">2</span>
+                     <span class="cart-item">!</span>
                   </a>
                </div>
             </div>
@@ -404,7 +401,6 @@
                         <h2 class="section__title">
                            <span class="yellow-bg yellow-bg-big">부트캠프 랭킹<img src="/assets/img/shape/yellow-bg.png" alt=""></span>
                         </h2>
-                        <p>You don't have to struggle alone, you've got our assistance and help.</p>
                      </div>
                   </div>
                </div>
@@ -413,14 +409,14 @@
                   <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                      <div class="blog__item white-bg mb-30 transition-3 fix">
                         <div class="blog__thumb w-img fix">
-                           <a href="#">
+                           <a href="${rank[5]}">
                               <!--sql 첫번쨰 인덱스를 출력, 해당 사진 -->
                               <img src="/assets/img/course/${rank[1]}" alt="" width='100' height='260'>
                            </a>
                         </div>
                         <div class="blog__content">
                            <!--sql 첫번쨰 인덱스를 출력, 해당 학원이름 -->
-                           <h3 class="blog__title"><a href="#">${rank[0]}</a></h3>
+                           <h3 class="blog__title"><a href="${rank[5]}">${rank[0]}</a></h3>
                            <div class="blog__meta d-flex align-items-center justify-content-between">
                               <div class="blog__author d-flex align-items-center">
                                  <span><i class="icon_star"></i></span>
@@ -428,7 +424,7 @@
                                  <div>${rank[3]}</div>
                               </div>
                               <div class="blog__date d-flex align-items-center">
-                                 <a href="#" class="link-btn">
+                                 <a href="${rank[5]}" class="link-btn">
                                     View More
                                     <i class="far fa-arrow-right"></i>
                                     <i class="far fa-arrow-right"></i>
@@ -453,7 +449,7 @@
                               <!-- 나중에 순위 메길것 -->
                               <span><h4>${rankOther[4]}</h4></span>
                               <!--sql 첫번쨰 인덱스를 출력, 해당 학원이름 -->
-                              <h3 class="events__title"><a href="#">${rankOther[0]}</a></h3>
+                              <h3 class="events__title"><a href="${rankOther[5]}">${rankOther[0]}</a></h3>
                               <div class="events__content">
                                  <div class="events__meta">
                                     <!--sql 첫번쨰 인덱스를 출력, 해당 학원 후기 평균낸점수 -->
@@ -461,7 +457,7 @@
                                  </div>
                               </div>
                               <div class="events__more">
-                                 <a href="#" class="link-btn">
+                                 <a href="${rankOther[5]}" class="link-btn">
                                     View More
                                     <i class="far fa-arrow-right"></i>
                                     <i class="far fa-arrow-right"></i>
@@ -584,6 +580,19 @@
       <script src="/assets/js/wow.min.js"></script>
       <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="/assets/js/main.js"></script>
+      <script type = "text/javascript">
+         $(function() {
+             $(".onoff").click( function() { 
+                 // if( $("#switch").is_CHECKED) {
+                        //alert("s");
+                        setTimeout(() => {
+                           window.location.href="/lecture/index";
+                        }, 300);
+                        
+                 // }    
+               });
+            })
+      </script>
    </body>
 </html>
 

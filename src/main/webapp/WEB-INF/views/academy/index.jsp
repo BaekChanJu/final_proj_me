@@ -38,8 +38,8 @@
          <!-- Add your site or application content here -->
 
 
-          <!--0102퀵메뉴 추가-->
-          <div class="quickmenu">
+         <!--0102퀵메뉴 추가-->
+         <div class="quickmenu">
 
             <ul style="text-decoration: none">
                <li id="quickmenu2"><img src="/assets/img/site1.png"></li></img>
@@ -88,13 +88,10 @@
                               <nav>
                                  <ul>
                                     <li>
-                                       <a href="course-grid" class="cat-menu d-flex align-items-center">
-                                          <div class="cat-dot-icon d-inline-block">
-                                             <input type="checkbox" id="switch" /><label class="onoff" for="switch">Toggle</label>
-                                          </div>
-
-                                       </a>
-
+                                       <div class="cat-dot-icon d-inline-block">
+                                          <input type="checkbox" id="switch" />
+                                          <label class="onoff" for="switch">Toggle</label>
+                                       </div>
                                     </li>
                                  </ul>
                               </nav>
@@ -124,14 +121,14 @@
                                           <li class="has-dropdown">
                                              <a href="">게시판</a>
                                              <ul class="submenu">
-                                                <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                                
                                                 <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                                 <li><a href="/board/newsList">뉴스</a></li>
                                                 <li><a href="/board/announcement">공지</a></li>
                                              </ul>
                                           </li>
                                           <li>
-                                             <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                             <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                           </li>
                                        </ul>
                                     </nav>
@@ -144,15 +141,7 @@
                                        <input type="text" name ="keywords" placeholder="Search...">
                                        <button type="submit"><i class="fad fa-search"></i></button>
                                     </form>
-                                    <div class="header__cart">
-                                       <a href="javascript:void(0);" class="cart-toggle-btn">
-                                          <div class="header__cart-icon">
-                                             <img src="/assets/img/heart.png" alt="heart">
-
-                                          </div>
-                                          <span class="cart-item">2</span>
-                                       </a>
-                                    </div>
+                                    
                                  </div>
                                  <div class="header__btn ml-20 d-none d-sm-block">
                                     <a href="/sign-in" class="e-btn">로그인</a>
@@ -188,14 +177,14 @@
                                           <li class="has-dropdown">
                                              <a href="">게시판</a>
                                              <ul class="submenu">
-                                                <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                                
                                                 <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                                 <li><a href="/board/newsList">뉴스</a></li>
                                                 <li><a href="/board/announcement">공지</a></li>
                                              </ul>
                                           </li>
                                           <li>
-                                             <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                             <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                           </li>
                                        </ul>
                                     </nav>
@@ -220,7 +209,7 @@
                                           <div class="header__cart-icon">
                                              <img src="/assets/img/heart.png" alt="heart"/ >
                                           </div>
-                                          <span class="cart-item">2</span>
+                                          <span class="cart-item">!</span>
                                        </a>
                                     </div>
                                  </div>
@@ -390,7 +379,7 @@
                               <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6" />
                            </svg>
                         </div>
-                        <span class="cart-item">2</span>
+                        <span class="cart-item">!</span>
                      </a>
                   </div>
                </div>
@@ -489,7 +478,7 @@
                                     </div>
                                     <div class="hero__promotion-text">
                                        <h5>Congrstulations</h5>
-                                       <p>Your admission completed</p>
+                                       <p>전국의 모든 부트캠프 정보 기입 완료</p>
                                     </div>
                                  </div>
                                  <div class="hero__promotion education d-none d-lg-flex white-bg layer"
@@ -508,17 +497,17 @@
                                     </div>
                                     <div class="hero__promotion-text">
                                        <h5><span class="counter">450</span>K</h5>
-                                       <p>Assisted Student</p>
+                                       <p>올해의 부트캠프 학생 수</p>
                                     </div>
                                  </div>
                                  <div class="hero__class d-none d-lg-flex layer" data-depth="0.3">
                                     <div class="hero__class-thumb mr-15">
-                                       <img src="/assets/img/hero/hero-2/hero-sm.jpg" alt="">
+                                       <img src="/assets/img/hero/hero-2/hero-sm.png" alt="">
                                     </div>
                                     <div class="hero__class-text">
-                                       <h5>User Experience Class</h5>
-                                       <p>Tomorrow is our</p>
-                                       <a href="contact">Join Now</a>
+                                       <h5>Welcome to Code O'clock.</h5>
+                                       <p>지금 코드어클락과 함께 하세요.</p>
+                                       <a href="/sign-up">sign-up</a>
                                     </div>
                                  </div>
                                  <div class="hero__mic">
@@ -590,11 +579,11 @@
                             <!-- 랭킹 값을 넣어서 해야함 수정 필요 -->
                            <c:forEach items="${rankFirst}" var="rank">
                            <div class="services__content">
-                              <h3 class="services__title"><a href="about">${rank[0]}</a></h3>
+                              <h3 class="services__title"><a href="${rank[5]}">${rank[0]}</a></h3>
                         
                               <p><i class="icon_star"></i> ${rank[3]}</p>
 
-                              <a href="about" class="link-btn-2">
+                              <a href="${rank[5]}" class="link-btn-2">
                                  <i class="far fa-arrow-right"></i>
                                  <i class="far fa-arrow-right"></i>
                               </a>
@@ -624,11 +613,11 @@
                            </div>
                            <c:forEach items="${rankSecond}" var="rank">
                            <div class="services__content">
-                              <h3 class="services__title"><a href="about">${rank[0]}</a></h3>
+                              <h3 class="services__title"><a href="${rank[5]}">${rank[0]}</a></h3>
                               <p><i class="icon_star"></i> ${rank[3]}</p>
                               
 
-                              <a href="about" class="link-btn-2">
+                              <a href="${rank[5]}" class="link-btn-2">
                                  <i class="far fa-arrow-right"></i>
                                  <i class="far fa-arrow-right"></i>
                               </a>
@@ -668,11 +657,11 @@
                            </div>
                            <c:forEach items="${rankThird}" var="rank">
                            <div class="services__content">
-                              <h3 class="services__title"><a href="about">${rank[0]}</a></h3>
+                              <h3 class="services__title"><a href="${rank[5]}">${rank[0]}</a></h3>
                               
                               <p><i class="icon_star"></i> ${rank[3]}</p>
 
-                              <a href="about" class="link-btn-2">
+                              <a href="${rank[5]}" class="link-btn-2">
                                  <i class="far fa-arrow-right"></i>
                                  <i class="far fa-arrow-right"></i>
                               </a>
@@ -716,10 +705,8 @@
                         <div class="section__title-wrapper mb-60">
                            <h2 class="section__title"><span class="yellow-bg yellow-bg-big">인기<img
                                     src="/assets/img/shape/yellow-bg.png" alt=""></span> 교육과정 목록</h2>
-                           <p>You don't have to struggle alone, you've got our assistance and help.</p>
                         </div>
                      </div>
-
                   </div>
 
 
@@ -911,6 +898,19 @@
          <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
          <script src="/assets/js/main.js"></script>
          <script src="/assets/js/quickmenu.js"></script> <!--퀵메뉴js-->
+         <script type = "text/javascript">
+            $(function() {
+                $(".onoff").click( function() { 
+                    // if( $("#switch").is_CHECKED) {
+                           //alert("s");
+                           setTimeout(() => {
+                              window.location.href="/lecture/index";
+                           }, 300);
+                           
+                    // }    
+                  });
+               })
+         </script>
       </body>
 
       </html>

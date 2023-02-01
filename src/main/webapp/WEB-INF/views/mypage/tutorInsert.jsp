@@ -28,6 +28,15 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" href="/assets/css/onoff.css">
     <!--섬머노트용 css-->
     <link rel="stylesheet" href="/assets/css/summernote/summernote-lite.css">
+
+    <script type="text/javascript">
+      var member_id = '<%=(Integer)session.getAttribute("memIdInt")%>';
+      
+      if(member_id == 'null') {
+         alert('로그인해야 이용할 수 있는 페이지입니다.');
+         location.href = "/sign-in";
+      }
+   </script>
     
 
     <style>
@@ -149,14 +158,14 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                     <li class="has-dropdown">
                                        <a href="/board/honestQuestionList">게시판</a>
                                        <ul class="submenu">
-                                          <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                          
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                           <li><a href="/board/newsList">뉴스</a></li>
                                           <li><a href="/board/announcement">공지</a></li>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
@@ -175,7 +184,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                        <img src="/assets/img/heart.png" alt="heart">
 
                                     </div>
-                                    <span class="cart-item">2</span>
+                                    <span class="cart-item">!</span>
                                  </a>
                               </div>
                            </div>
@@ -215,14 +224,14 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                     <li class="has-dropdown">
                                        <a href="">게시판</a>
                                        <ul class="submenu">
-                                          <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                          
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                           <li><a href="/board/newsList">뉴스</a></li>
                                           <li><a href="/board/announcement">공지</a></li>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
@@ -247,7 +256,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                                     <div class="header__cart-icon">
                                        <img src="/assets/img/heart.png" alt="heart"/ >
                                     </div>
-                                    <span class="cart-item">2</span>
+                                    <span class="cart-item">!</span>
                                  </a>
                               </div>
                            </div>
@@ -426,7 +435,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                   />
                 </svg>
               </div>
-              <span class="cart-item">2</span>
+              <span class="cart-item">!</span>
             </a>
           </div>
         </div>
@@ -440,7 +449,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
       <!-- page title area start -->
       <section
         class="page__title-area page__title-height page__title-overlay d-flex align-items-center"
-        data-background="/assets/img/page-title/page-title-2.jpg"
+        data-background="/assets/img/page-title/page-title.gif"
       >
         <div class="container">
           <div class="row">
@@ -537,8 +546,8 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                     </a>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                       <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/wishlist">관심학원 리스트</a><br/> 
-                        <a class="collapse-item" href="/mypage/jjimlist">관심강의 리스트</a>
+                        <a class="collapse-item" href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}">관심학원 리스트</a><br/> 
+                        <a class="collapse-item" href="/mypage/jjimlist?memIdInt=${sessionScope.memIdInt}">관심강의 리스트</a>
                       </div>
                     </div>
                   </li>

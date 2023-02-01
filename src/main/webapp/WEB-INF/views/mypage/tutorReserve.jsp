@@ -45,6 +45,15 @@
     <!-- 캘린더용 css -->
     <link rel="stylesheet" href="/assets/css/calendar.css">
 
+    <script type="text/javascript">
+      var member_id = '<%=(Integer)session.getAttribute("memIdInt")%>';
+      
+      if(member_id == 'null') {
+         alert('로그인해야 이용할 수 있는 페이지입니다.');
+         location.href = "/sign-in";
+      }
+   </script>
+
     <style>
       #accordionSidebar {
         background-color: aliceblue;
@@ -164,14 +173,14 @@
                                     <li class="has-dropdown">
                                        <a href="/board/honestQuestionList">게시판</a>
                                        <ul class="submenu">
-                                          <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                          
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                           <li><a href="/board/newsList">뉴스</a></li>
                                           <li><a href="/board/announcement">공지</a></li>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
@@ -190,7 +199,7 @@
                                        <img src="/assets/img/heart.png" alt="heart">
 
                                     </div>
-                                    <span class="cart-item">2</span>
+                                    <span class="cart-item">!</span>
                                  </a>
                               </div>
                            </div>
@@ -230,14 +239,14 @@
                                     <li class="has-dropdown">
                                        <a href="">게시판</a>
                                        <ul class="submenu">
-                                          <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                          
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                           <li><a href="/board/newsList">뉴스</a></li>
                                           <li><a href="/board/announcement">공지</a></li>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
@@ -262,7 +271,7 @@
                                     <div class="header__cart-icon">
                                        <img src="/assets/img/heart.png" alt="heart"/ >
                                     </div>
-                                    <span class="cart-item">2</span>
+                                    <span class="cart-item">!</span>
                                  </a>
                               </div>
                            </div>
@@ -335,76 +344,76 @@
    <!-- header area end -->
 
 <!-- cart mini area start -->
-<div class="cartmini__area">
-   <div class="cartmini__wrapper">
-      <div class="cartmini__title">
-         <h4>Shopping cart</h4>
-      </div>
-      <div class="cartmini__close">
-         <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
-      </div>
-      <div class="cartmini__widget ">
-         <div class="cartmini__inner" style="overflow-x:hidden;">
-            <ul>
-               <c:forEach items="${jjimList}" var="wish">
-               <li>
-                  <div class="cartmini__thumb">
-                     <a href="#">
-                        <img src="/assets/img/lecture/${wish[3]}" alt="">
-                     </a>
+      <div class="cartmini__area">
+         <div class="cartmini__wrapper">
+            <div class="cartmini__title">
+               <h4>찜/위시리스트</h4>
+            </div>
+            <div class="cartmini__close">
+               <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+            </div>
+            <div class="cartmini__widget ">
+               <div class="cartmini__inner" style="overflow-x:hidden;">
+                  <ul>
+                     <c:forEach items="${jjimList}" var="wish">
+                     <li>
+                        <div class="cartmini__thumb">
+                           <a href="#">
+                              <img src="/assets/img/lecture/${wish[3]}" alt="">
+                           </a>
+                        </div>
+                        <div class="cartmini__content">
+                           <h5><a href="#">${wish[0]} </a></h5>
+                           <div class="product-quantity mt-10 mb-10">
+                           </div>
+                           <div class="product__sm-price-wrapper">
+                              <span class="product__sm-price">${wish[3]}</span>
+                           </div>
+                        </div>
+                        <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                     </li>
+                     </c:forEach>
+                  </ul>
+               </div>
+               <div class="cartmini__checkout">
+     
+                  <div class="cartmini__checkout-btn">
+                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span>찜 목록</a>
                   </div>
-                  <div class="cartmini__content">
-                     <h5><a href="#">${wish[0]} </a></h5>
-                     <div class="product-quantity mt-10 mb-10">
-                     </div>
-                     <div class="product__sm-price-wrapper">
-                        <span class="product__sm-price">${wish[3]}</span>
-                     </div>
+               </div>
+               <div class="cartmini__inner ">
+                  <ul>
+                     <c:forEach items="${wishList}" var="wish">
+                     <li>
+                        <div class="cartmini__thumb">
+                           <a href="#">
+                              <img src="/assets/img/course/${wish[4]}" alt="">
+                           </a>
+                        </div>
+                        <div class="cartmini__content">
+                           <h5><a href="#">${wish[0]} </a></h5>
+                           <div class="product-quantity mt-10 mb-10">
+                           </div>
+                           <div class="product__sm-price-wrapper">
+                              <span class="product__sm-price">${wish[3]}</span>
+                           </div>
+                        </div>
+                        <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                     </li>
+                     </c:forEach>
+                  </ul>
+               </div>
+               <div class="cartmini__checkout">
+     
+                  <div class="cartmini__checkout-btn">
+                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span>위시리스트 목록</a>
                   </div>
-                  <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-               </li>
-               </c:forEach>
-            </ul>
-         </div>
-         <div class="cartmini__checkout">
-
-            <div class="cartmini__checkout-btn">
-               <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
+               </div>
             </div>
          </div>
-         <div class="cartmini__inner ">
-            <ul>
-               <c:forEach items="${wishList}" var="wish">
-               <li>
-                  <div class="cartmini__thumb">
-                     <a href="#">
-                        <img src="/assets/img/course/${wish[4]}" alt="">
-                     </a>
-                  </div>
-                  <div class="cartmini__content">
-                     <h5><a href="#">${wish[0]} </a></h5>
-                     <div class="product-quantity mt-10 mb-10">
-                     </div>
-                     <div class="product__sm-price-wrapper">
-                        <span class="product__sm-price">${wish[3]}</span>
-                     </div>
-                  </div>
-                  <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-               </li>
-               </c:forEach>
-            </ul>
-         </div>
-         <div class="cartmini__checkout">
-
-            <div class="cartmini__checkout-btn">
-               <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
-            </div>
-         </div>
       </div>
-   </div>
-</div>
-<div class="body-overlay"></div>
-<!-- cart mini area end -->
+      <div class="body-overlay"></div>
+      <!-- cart mini area end -->
 
     <!-- sidebar area start -->
     <div class="sidebar__area">
@@ -441,7 +450,7 @@
                   />
                 </svg>
               </div>
-              <span class="cart-item">2</span>
+              <span class="cart-item">!</span>
             </a>
           </div>
         </div>
@@ -455,7 +464,7 @@
       <!-- page title area start -->
       <section
         class="page__title-area page__title-height page__title-overlay d-flex align-items-center"
-        data-background="/assets/img/page-title/page-title-2.jpg"
+        data-background="/assets/img/page-title/page-title.gif"
       >
         <div class="container">
           <div class="row">
@@ -475,7 +484,6 @@
       </section>
       <!-- page title area end -->
 
-      
       <!-- 왼쪽 메뉴 표 Strat-->
       
       <section class="cart-area pt-100 pb-100">
@@ -552,8 +560,8 @@
                     </a>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                       <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/wishlist">관심학원 리스트</a><br/> 
-                        <a class="collapse-item" href="/mypage/jjimlist">관심강의 리스트</a>
+                        <a class="collapse-item" href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}">관심학원 리스트</a><br/> 
+                        <a class="collapse-item" href="/mypage/jjimlist?memIdInt=${sessionScope.memIdInt}">관심강의 리스트</a>
                       </div>
                     </div>
                   </li>
@@ -669,8 +677,8 @@
                         <li>반드시 예약 시간이 지나기 전에 입장해주세요.</li>
                       </ul>
                     </div>
-                    <div class="header__btn ml-20 d-none d-sm-block" style="margin-left: 40px; margin-top: 20px;">
-                        <button class="e-btn e-btn-4" data-bs-toggle="modal" data-bs-target="#exampleModal">등록하기</button>
+                    <div class="header__btn ml-20 d-none d-sm-block" style="margin-left: 30px; margin-top: 20px;">
+                        <button class="e-btn e-btn-4" data-bs-toggle="modal" data-bs-target="#exampleModal">예약 등록하기</button>
                     </div>
                   </div>
 
@@ -728,7 +736,7 @@
 
           <div class="row">
 
-            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+            <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
               <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">
                 <div class="room__tag pb-15">
                   <a class="">2023-01-31 14:00PM</a>
@@ -751,7 +759,7 @@
                   </div>
                 </div>
               </div>
-           </div>
+           </div> -->
 
           <!-- 예약사항을 카드와 입장하기 버튼으로 구현 -->
           <c:forEach items="${calendarList}" var="CL">
@@ -759,7 +767,7 @@
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
               <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">
                 <div class="room__tag pb-15">
-                  <a class="">${CL.calstartSTR}</a>
+                  <a class="cal_font">${CL.calstartSTR}</a>
                 </div>
                 <div class="teacher__content teacher__lecture">
                   <div class="teacher__thumb w-img fix">
@@ -794,33 +802,33 @@
     </section>
 
   </main>
+
   <!-- modal: HonestQuestion -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
        <div class="modal-content">
           <form action="insertReservation" method="post">
              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">솔직 질문</h5>
+                <h5 class="modal-title" id="exampleModalLabel">예약 시간 등록하기</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
-             <div class="modal-body">
+             <div class="modal-body" style="text-align: center;">
                 <input type="hidden" name="calReserve" value="0">
-                <input type="hidden" name="tId" value="${sessionScope.tId}">
-                <a>${sessionScope.tId}</a>
+                <input type="hidden" name="teacherId" value="${sessionScope.teacherId}">
                 <div class="row mb-2">
-                   <div class="col-4">
+
+                   <div class="col-12">
                       <label for="hq_keyIn" class="col-form-label">시작날짜</label>
                       <input type="datetime-local" class="form-control" name="calStart">
                       <label for="hq_keyIn" class="col-form-label">종료날짜</label>
                       <input type="datetime-local" class="form-control" name="calEnd">
                    </div>
-                   <div class="col-8" id="keyword_show"></div>
-                   <input type="hidden" id="hq_keyOut" name="hq_keyword">
+                   
                 </div>
              </div>
              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">등록하기</button>
+               <button type="submit" class="btn btn-primary">등록하기</button>
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
              </div>
           </form>
        </div>
@@ -966,7 +974,7 @@
         headerToolbar : {
               left: 'prev,next today',
                 center: 'title'	,
-                end : 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                end : 'dayGridMonth,timeGridWeek,listWeek'
                 },
                 height: '800px', // calendar 높이 설정
               expandRows: true, // 화면에 맞게 높이 재설정
@@ -985,7 +993,7 @@
                     <% for (Map vo : calendarList) {%>
                     {
                       id :'<%=(Integer)vo.get("calid")%>',
-                      title : '예약',
+                      title : '<%=(String)vo.get("vctitle")%>',
                       start : '<%=(Date)vo.get("calstart")%>',
                       end : '<%=(Date)vo.get("calend")%>',
                         

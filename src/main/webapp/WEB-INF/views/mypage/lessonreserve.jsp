@@ -45,6 +45,15 @@
     <!-- 캘린더용 css -->
     <link rel="stylesheet" href="/assets/css/calendar.css">
 
+    <script type="text/javascript">
+      var member_id = '<%=(Integer)session.getAttribute("memIdInt")%>';
+      
+      if(member_id == 'null') {
+         alert('로그인해야 이용할 수 있는 페이지입니다.');
+         location.href = "/sign-in";
+      }
+   </script>
+
     <style>
       #accordionSidebar {
         background-color: aliceblue;
@@ -164,14 +173,14 @@
                                     <li class="has-dropdown">
                                        <a href="/board/honestQuestionList">게시판</a>
                                        <ul class="submenu">
-                                          <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                          
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                           <li><a href="/board/newsList">뉴스</a></li>
                                           <li><a href="/board/announcement">공지</a></li>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
@@ -190,7 +199,7 @@
                                        <img src="/assets/img/heart.png" alt="heart">
 
                                     </div>
-                                    <span class="cart-item">2</span>
+                                    <span class="cart-item">!</span>
                                  </a>
                               </div>
                            </div>
@@ -230,14 +239,14 @@
                                     <li class="has-dropdown">
                                        <a href="/board/honestQuestionList">게시판</a>
                                        <ul class="submenu">
-                                          <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                          
                                           <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                           <li><a href="/board/newsList">뉴스</a></li>
                                           <li><a href="/board/announcement">공지</a></li>
                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                       <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                     </li>
                                  </ul>
                               </nav>
@@ -262,7 +271,7 @@
                                     <div class="header__cart-icon">
                                        <img src="/assets/img/heart.png" alt="heart"/ >
                                     </div>
-                                    <span class="cart-item">2</span>
+                                    <span class="cart-item">!</span>
                                  </a>
                               </div>
                            </div>
@@ -441,7 +450,7 @@
                   />
                 </svg>
               </div>
-              <span class="cart-item">2</span>
+              <span class="cart-item">!</span>
             </a>
           </div>
         </div>
@@ -455,7 +464,7 @@
       <!-- page title area start -->
       <section
         class="page__title-area page__title-height page__title-overlay d-flex align-items-center"
-        data-background="/assets/img/page-title/page-title-2.jpg"
+        data-background="/assets/img/page-title/page-title.gif"
       >
         <div class="container">
           <div class="row">
@@ -725,7 +734,7 @@
 
           <div class="row">
 
-            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+            <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
               <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">
                 <div class="room__tag pb-15">
                   <a class="">2023-01-31 14:00PM</a>
@@ -748,7 +757,7 @@
                   </div>
                 </div>
               </div>
-           </div>
+           </div> -->
 
           <!-- 예약사항을 카드와 입장하기 버튼으로 구현-->
           <c:forEach items="${calendarList}" var="CL">
@@ -756,7 +765,7 @@
             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
               <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">
                 <div class="room__tag pb-15">
-                  <a class="">${CL.calstartSTR}</a>
+                  <a class="cal_font">${CL.calstartSTR}</a>
                 </div>
                 <div class="teacher__content teacher__lecture">
                   <div class="teacher__thumb w-img fix">
@@ -950,7 +959,7 @@
                     <% for (Map vo : calendarList) {%>
                     {
                       id :'<%=(Integer)vo.get("calid")%>',
-                      title : '<%=(String)vo.get("caltitle")%>',
+                      title : '<%=(String)vo.get("vctitle")%>',
                       start : '<%=(Date)vo.get("calstart")%>',
                       end : '<%=(Date)vo.get("calend")%>',
                         

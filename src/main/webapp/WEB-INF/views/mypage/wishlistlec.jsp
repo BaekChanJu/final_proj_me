@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
@@ -24,12 +24,55 @@
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
       <link rel="stylesheet" href="/assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/wishlist.css">
       <link rel="stylesheet" href="/assets/css/onoff.css">
+
+      <script type="text/javascript">
+         var member_id = '<%=(Integer)session.getAttribute("memIdInt")%>';
+         
+         if(member_id == 'null') {
+            alert('로그인해야 이용할 수 있는 페이지입니다.');
+            location.href = "/sign-in";
+         }
+      </script>
+      
+
+      <style> 
+         #accordionSidebar{
+            background-color: aliceblue;
+            color: #696969;
+         }
+         .nav-item span{
+            color: #2F4F4F;
+            font-weight: bolder;
+            margin-left: 10px;
+            margin-bottom: 15px;
+          
+         }
+         .nav-item i{
+            color: #2F4F4F;
+            font-weight: bolder;
+            margin-left: 20px;
+         }
+         .collapse-item {
+             margin-left:30px;
+             margin-top:10px;
+             margin-bottom:20px;
+     }
+     .accounthead img{
+      width:20px;
+      height:20px;
+      margin-right: 10px;
+      margin-bottom : 5px;
+     }
+     </style>
+
    </head>
    <body>
       <!--[if lte IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
       <![endif]-->
+   
       
       <!-- Add your site or application content here -->  
 
@@ -153,7 +196,7 @@
                                           <a href="/aboutus">AboutUs</a>
                                        </li>
                                        <li class="has-dropdown">
-                                          <a href="">학원/강의</a>
+                                          <a href="course-grid">학원/강의</a>
                                           <ul class="submenu">
                                                 <li><a href="/academy/course-sidebar">학원 목록</a></li>
                                                 <li><a href="/academy/rank">학원 랭크</a></li>
@@ -268,77 +311,77 @@
       </header>
       <!-- header area end -->
 
-      <!-- cart mini area start -->
-      <div class="cartmini__area">
-         <div class="cartmini__wrapper">
-            <div class="cartmini__title">
-               <h4>찜/위시리스트</h4>
+   <!-- cart mini area start -->
+   <div class="cartmini__area">
+      <div class="cartmini__wrapper">
+         <div class="cartmini__title">
+            <h4>Shopping cart</h4>
+         </div>
+         <div class="cartmini__close">
+            <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="cartmini__widget ">
+            <div class="cartmini__inner" style="overflow-x:hidden;">
+               <ul>
+                  <c:forEach items="${jjimList}" var="wish">
+                  <li>
+                     <div class="cartmini__thumb">
+                        <a href="#">
+                           <img src="/assets/img/lecture/${wish[3]}" alt="">
+                        </a>
+                     </div>
+                     <div class="cartmini__content">
+                        <h5><a href="#">${wish[0]} </a></h5>
+                        <div class="product-quantity mt-10 mb-10">
+                        </div>
+                        <div class="product__sm-price-wrapper">
+                           <span class="product__sm-price">${wish[3]}</span>
+                        </div>
+                     </div>
+                     <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                  </li>
+                  </c:forEach>
+               </ul>
             </div>
-            <div class="cartmini__close">
-               <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+            <div class="cartmini__checkout">
+  
+               <div class="cartmini__checkout-btn">
+                  <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
+               </div>
             </div>
-            <div class="cartmini__widget ">
-               <div class="cartmini__inner" style="overflow-x:hidden;">
-                  <ul>
-                     <c:forEach items="${jjimList}" var="wish">
-                     <li>
-                        <div class="cartmini__thumb">
-                           <a href="#">
-                              <img src="/assets/img/lecture/${wish[3]}" alt="">
-                           </a>
+            <div class="cartmini__inner ">
+               <ul>
+                  <c:forEach items="${wishList}" var="wish">
+                  <li>
+                     <div class="cartmini__thumb">
+                        <a href="#">
+                           <img src="/assets/img/course/${wish[4]}" alt="">
+                        </a>
+                     </div>
+                     <div class="cartmini__content">
+                        <h5><a href="#">${wish[0]} </a></h5>
+                        <div class="product-quantity mt-10 mb-10">
                         </div>
-                        <div class="cartmini__content">
-                           <h5><a href="#">${wish[0]} </a></h5>
-                           <div class="product-quantity mt-10 mb-10">
-                           </div>
-                           <div class="product__sm-price-wrapper">
-                              <span class="product__sm-price">${wish[3]}</span>
-                           </div>
+                        <div class="product__sm-price-wrapper">
+                           <span class="product__sm-price">${wish[3]}</span>
                         </div>
-                        <a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                     </li>
-                     </c:forEach>
-                  </ul>
-               </div>
-               <div class="cartmini__checkout">
-     
-                  <div class="cartmini__checkout-btn">
-                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span>찜 목록</a>
-                  </div>
-               </div>
-               <div class="cartmini__inner ">
-                  <ul>
-                     <c:forEach items="${wishList}" var="wish">
-                     <li>
-                        <div class="cartmini__thumb">
-                           <a href="#">
-                              <img src="/assets/img/course/${wish[4]}" alt="">
-                           </a>
-                        </div>
-                        <div class="cartmini__content">
-                           <h5><a href="#">${wish[0]} </a></h5>
-                           <div class="product-quantity mt-10 mb-10">
-                           </div>
-                           <div class="product__sm-price-wrapper">
-                              <span class="product__sm-price">${wish[3]}</span>
-                           </div>
-                        </div>
-                        <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
-                     </li>
-                     </c:forEach>
-                  </ul>
-               </div>
-               <div class="cartmini__checkout">
-     
-                  <div class="cartmini__checkout-btn">
-                     <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span>위시리스트 목록</a>
-                  </div>
+                     </div>
+                     <a href="/mypage/deleteWish?memIdInt=${wish[2]}&wId=${wish[1]}" class="cartmini__del"><i class="fal fa-times"></i></a>
+                  </li>
+                  </c:forEach>
+               </ul>
+            </div>
+            <div class="cartmini__checkout">
+  
+               <div class="cartmini__checkout-btn">
+                  <a href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}" class="e-btn e-btn-border mb-10 w-100"> <span></span> view cart</a>
                </div>
             </div>
          </div>
       </div>
-      <div class="body-overlay"></div>
-      <!-- cart mini area end -->
+   </div>
+   <div class="body-overlay"></div>
+   <!-- cart mini area end -->
 
 
       <!-- sidebar area start -->
@@ -385,26 +428,219 @@
 
       <main>
 
-         <!-- error area start -->
-         <section class="error__area pt-200 pb-200">
+         <!-- page title area start -->
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title.gif">
             <div class="container">
                <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-                     <div class="error__item text-center">
-                        <div class="error__thumb mb-45">
-                           <img src="/assets/img/error/error.gif" alt="">
-                        </div>
-                        <div class="error__content">
-                           <h3 class="error__title">Page Not Found!</h3>
-                           <p>페이지를 찾을 수 없습니다!</p>
-                           <button class="e-btn e-btn-3 e-btn-4" onclick="bback()">뒤로가기</button>
-                        </div>
+ 
+                  <div class="col-xxl-12">
+                     <div class="page__title-wrapper mt-110">
+                        <h3 class="page__title">My Wishlist</h3>                         
+                        <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="index">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                           </ol>
+                        </nav>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- error area end -->
+         <!-- page title area end -->
+
+         <!-- 위시리스트 Strat-->
+         <section class="cart-area pt-100 pb-100">
+            <div class="container">
+               <div class="row">
+
+                  <div class="col-sm-3">
+                     <div class="left-sidebar">
+                       <ul
+                         class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+                         id="accordionSidebar"
+                       >
+                         <li class="nav-item">
+                           <a
+                             class="nav-link collapsed"
+                             href="admin/academyList"
+                             data-toggle="collapse"
+                             data-target="#collapseOne"
+                             aria-expanded="true"
+                             aria-controls="collapseOne"
+                           >
+                             <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
+                           </a>
+                           <div
+                             id="collapseOne"
+                             class="collapse"
+                             aria-labelledby="headingUtilities"
+                             data-parent="#accordionSidebar"
+                           >
+                             <div class="bg-white py-2 collapse-inner rounded">
+                              <a class="collapse-item" href="/mypage/modify">회원정보 수정</a><br />
+                              <a class="collapse-item" href="/mypage/withdrawal">회원 탈퇴</a>
+                             </div>
+                           </div>
+                         </li>
+       
+                         <li class="nav-item">
+                           <a
+                             class="nav-link collapsed"
+                             href="admin/tutorList"
+                             data-toggle="collapse"
+                             data-target="#collapseTwo"
+                             aria-expanded="true"
+                             aria-controls="collapseTwo"
+                           >
+                             <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
+                           </a>
+                           <div
+                             id="collapseTwo"
+                             class="collapse"
+                             aria-labelledby="headingUtilities"
+                             data-parent="#accordionSidebar"
+                           >
+                             <div class="bg-white py-2 collapse-inner rounded">
+                               <a class="collapse-item" href="/mypage/myreview">리뷰관리</a><br />
+                               <a class="collapse-item" href="">1:1문의</a><br />
+                               <a class="collapse-item" href="">코딩게시판</a><br />
+                               <a class="collapse-item" href="/mypage/myquestion">솔직답변</a><br />
+                               <a class="collapse-item" href="">학원 탈퇴</a>
+                             </div>
+                           </div>
+                         </li>
+                         <li class="nav-item">
+                           <a
+                             class="nav-link collapsed"
+                             href="admin/tutorList"
+                             data-toggle="collapse"
+                             data-target="#collapseThree"
+                             aria-expanded="true"
+                             aria-controls="collapseThree"
+                           >
+                             <i class="fas fa-heart"></i> <span>WishList</span>
+                           </a>
+                           <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                             <div class="bg-white py-2 collapse-inner rounded">
+                               <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
+                               <a class="collapse-item" href="/mypage/wishlistlec">관심강의리스트</a>
+                             </div>
+                           </div>
+                         </li>
+                         <li class="nav-item">
+                           <a
+                             class="nav-link collapsed"
+                             href="admin/lectureList.do"
+                             data-toggle="collapse"
+                             data-target="#collapseFour"
+                             aria-expanded="true"
+                             aria-controls="collapseFour"
+                           >
+                             <i class="fas fa-fw fa-desktop"></i> <span>나의 학습</span>
+                           </a>
+                           <div
+                             id="collapseFour"
+                             class="collapse"
+                             aria-labelledby="headingUtilities"
+                             data-parent="#accordionSidebar"
+                           >
+                             <div class="bg-white py-2 collapse-inner rounded">
+                               <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
+                               <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
+                             </div>
+                           </div>
+                         </li>
+       
+                         <li class="nav-item">
+                           <a class="nav-link" href="/mypage">
+                             <i class="fas fa-fw fa-table"></i> <span>튜터등록</span>
+                           </a>
+                         </li>
+       
+                         <!-- Nav Item - Pages Collapse Menu -->
+                       </ul>
+                     </div>
+                   </div>
+
+                  
+                  <div class="col-sm-9">
+                     <div class="accounthead mb-25">
+                        <h2 class="section__title"><span class="yellow-bg-sm">관심강의리스트 <img src="/assets/img/shape/yellow-bg-4.png" alt="">  </span></h2>
+                     </div>
+                        <form action="#">
+                           <div class="table-content table-responsive">
+                              <table class="table">
+                                    <thead>
+                                       <tr>
+                                          <th class="product-thumbnail">Images</th>
+                                          <th class="cart-product-name">Product</th>
+                                          <th class="product-price">Unit Price</th>
+                                          <th class="product-quantity">Quantity</th>
+                                          <th class="product-subtotal">Total</th>
+                                          <th class="product-remove">Remove</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <for each
+                                       <tr>
+                                          <td class="product-thumbnail"><a href="course-details"><img src="/assets/img/course/sm/cart-1.jpg" alt=""></a></td>
+                                          <td class="product-name"><a href="course-details">Strategy law and organization Foundation </a></td>
+                                          <td class="product-price"><span class="amount">$130.00</span></td>
+                                          <td class="product-quantity text-center">
+                                             <div class="product-quantity mt-10 mb-10">
+                                                <div class="product-quantity-form">
+                                                   <form action="#">
+                                                      <button class="cart-minus"><i class="far fa-minus"></i></button>
+                                                      <input class="cart-input" type="text" value="1"/>
+                                                      <button class="cart-plus"><i class="far fa-plus"></i></button>
+                                                   </form>
+                                                </div>
+                                             </div>
+                                          </td>
+                                          <td class="product-subtotal"><span class="amount">$130.00</span></td>
+                                          <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="product-thumbnail"><a href="course-details"><img src="/assets/img/course/sm/cart-2.jpg"  alt=""></a></td>
+                                          <td class="product-name"><a href="course-details">Fundamentals of music theory Learn new</a></td>
+                                          <td class="product-price"><span class="amount">$120.50</span></td>
+                                          <td class="product-quantity text-center">
+                                             <div class="product-quantity mt-10 mb-10">
+                                                <div class="product-quantity-form">
+                                                   <form action="#">
+                                                      <button class="cart-minus"><i class="far fa-minus"></i></button>
+                                                      <input class="cart-input" type="text" value="1"/>
+                                                      <button class="cart-plus"><i class="far fa-plus"></i></button>
+                                                   </form>
+                                                </div>
+                                             </div>
+                                          </td>
+                                          <td class="product-subtotal"><span class="amount">$120.50</span></td>
+                                          <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                                       </tr>
+                                    </tbody>
+                              </table>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-5 ml-auto">
+                                    <div class="cart-page-total">
+                                       <h2>Cart totals</h2>
+                                       <ul class="mb-20">
+                                          <li>Subtotal <span>$250.00</span></li>
+                                          <li>Total <span>$250.00</span></li>
+                                       </ul>
+                                       <a class="e-btn e-btn-border" href="checkout">Proceed to checkout</a>
+                                    </div>
+                              </div>
+                           </div>
+                        </form>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Cart Area End-->
+
 
       </main>
 
@@ -515,11 +751,18 @@
       <script src="/assets/js/wow.min.js"></script>
       <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="/assets/js/main.js"></script>
-      <script>
-         function bback() {
-            history.back();
-         }
-      </script>
+      <script src="/assets/js/wishList.js"></script><!--0106 좋아요 버튼 관련 ajax-->
+        <!-- Bootstrap core JavaScript-->
+    <script src="../admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    
+
+ 
+
+  
+
+    
+   
    </body>
 </html>
 

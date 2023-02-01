@@ -26,6 +26,15 @@
       <link rel="stylesheet" href="/assets/css/style.css">
       <link rel="stylesheet" href="/assets/css/wishlist.css">
       <link rel="stylesheet" href="/assets/css/onoff.css">
+
+      <script type="text/javascript">
+         var member_id = '<%=(Integer)session.getAttribute("memIdInt")%>';
+         
+         if(member_id == 'null') {
+            alert('로그인해야 이용할 수 있는 페이지입니다.');
+            location.href = "/sign-in";
+         }
+      </script>
       
 
       <style> 
@@ -132,14 +141,14 @@
                                  <li class="has-dropdown">
                                     <a href="/board/honestQuestionList">게시판</a>
                                     <ul class="submenu">
-                                       <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                       
                                        <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                        <li><a href="/board/newsList">뉴스</a></li>
                                        <li><a href="/board/announcement">공지</a></li>
                                     </ul>
                                  </li>
                                  <li>
-                                    <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                    <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                  </li>
                               </ul>
                            </nav>
@@ -158,7 +167,7 @@
                                     <img src="/assets/img/heart.png" alt="heart">
 
                                  </div>
-                                 <span class="cart-item">2</span>
+                                 <span class="cart-item">!</span>
                               </a>
                            </div>
                         </div>
@@ -198,14 +207,14 @@
                                  <li class="has-dropdown">
                                     <a href="/board/honestQuestionList">게시판</a>
                                     <ul class="submenu">
-                                       <li><a href="/board/honestQuestionList">솔직 답변</a></li>
+                                       
                                        <li><a href="/board/codingBoard">코딩 게시판</a></li>
                                        <li><a href="/board/newsList">뉴스</a></li>
                                        <li><a href="/board/announcement">공지</a></li>
                                     </ul>
                                  </li>
                                  <li>
-                                    <a href="https://app.slack.com/client/T04K98KG26R/C04K5JX8NDU" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
+                                    <a href="https://app.slack.com/client/T04K98KG26R/C04MTTWJS81" onclick="window.open(this.href, '_blank', 'width=400, height=800'); return false;">챗봇</a>
                                  </li>
                               </ul>
                            </nav>
@@ -230,7 +239,7 @@
                                        <div class="header__cart-icon">
                                           <img src="/assets/img/heart.png" alt="heart"/ >
                                        </div>
-                                       <span class="cart-item">2</span>
+                                       <span class="cart-item">!</span>
                                     </a>
                                  </div>
                               </div>
@@ -407,7 +416,7 @@
                            <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
                         </svg>
                      </div>
-                     <span class="cart-item">2</span>
+                     <span class="cart-item">!</span>
                   </a>
                </div>
             </div>
@@ -420,7 +429,7 @@
       <main>
 
          <!-- page title area start -->
-         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title-2.jpg">
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title.gif">
             <div class="container">
                <div class="row">
  
@@ -516,8 +525,8 @@
                     </a>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                       <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/mypage/wishlist">관심학원 리스트</a><br/> 
-                        <a class="collapse-item" href="/mypage/jjimlist">관심강의 리스트</a>
+                        <a class="collapse-item" href="/mypage/wishlist?memIdInt=${sessionScope.memIdInt}">관심학원 리스트</a><br/> 
+                        <a class="collapse-item" href="/mypage/jjimlist?memIdInt=${sessionScope.memIdInt}">관심강의 리스트</a>
                       </div>
                     </div>
                   </li>
@@ -606,40 +615,44 @@
             </div>
   
                   
-                   <div class="col-sm-9">
-                     <div class="accounthead mb-25">
-                        <h2 class="section__title "><span class="yellow-bg-sm">관심강의 리스트 <img src="/assets/img/shape/yellow-bg-4.png" alt="">  </span></h2>
-                     </div>
-                        <form action="#">
-                           <div class="table-content table-responsive">
-                              <table class="table">
-                                    <thead>
-                                       <tr>
-                                          <th class="product-thumbnail"></th>
-                                          <th class="cart-product-name">강의명</th>
-                                          <th class="cart-product-name">키워드</th>
-                                          <th class="product-subtotal">학원 바로가기</th>
-                                          <th class="product-remove">Remove</th>
-                                       </tr>
-                                    </thead>
-                                    <c:forEach items="${jjimList}" var="wish">
-                                    <tbody>
-                                       <tr>
-                                          <td class="product-thumbnail"><a href="course-details"><img src="/assets/img/course/${wish[3]}" alt=""></a></td>
-                                          <td class="product-name"><a href="course-details">${wish[0]}</a></td>
-                                          <td class="product-price"><span class="amount">${wish[4]}</span></td>
-                                          <td class="product-subtotal"> <button class="e-btn e-btn-border" type="submit">상세보기</button></td>
-                                          <td class="product-remove"><a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}"><i class="fa fa-times"></i></a></td>
-                                       </tr>
-                                    </tbody>
-                                    </c:forEach>
-                              </table>
-                           </div>
-                        </form>
-                  </div>
+            <div class="col-sm-9">
+               <div class="accounthead mb-25">
+                  <h2 class="section__title "><span class="yellow-bg-sm">관심강의리스트 <img src="/assets/img/shape/yellow-bg-4.png" alt="">  </span></h2>
                </div>
+                  <form action="#">
+                     <div class="table-content table">
+                        <table class="table">
+                              <thead>
+                                 <tr>
+                                    <th class="product-thumbnail"></th>
+                                    <th class="cart-product-name">강의명</th>
+                                 
+                                    <th class="product-subtotal">강의 바로가기</th>
+                                    <th class="product-remove">Remove</th>
+                                 </tr>
+                              </thead>
+                              <c:forEach items="${jjimList}" var="wish">
+                                 <form action="/deletetWish?jjId=${wish[1]}">
+                              <tbody>
+                                 <tr>
+                                    <td class="product-thumbnail"><a href="course-details"><img src="/assets/img/lecture/${wish[3]}" alt="" style="width: 100px; height: 100px;"></a></td>
+                                    <td class="product-name" ><a href="/lecture/lecture-details?vcId=${wish[5]}">${wish[0]}</a></td>
+                             
+                                   
+                              
+                                    <td class="product-subtotal" style="width:120px"> <button class="e-btn e-btn-border" type='button' onclick="location.href='/lecture/lecture-details?vcId=${wish[5]}'">보기</button></td>
+                                    <td class="product-remove" id="removebtn"><a href="/mypage/deleteJjim?memIdInt=${wish[2]}&jjId=${wish[1]}"><i class="fa fa-times"></i></a></td>
+                                 </tr>
+                              </tbody>
+                              </c:forEach>
+                        </table>
+                     </div>
+                  </form>
             </div>
-         </section>
+         </div>
+      </div>
+   </section>
+   <!-- Cart Area End-->
          <!-- Cart Area End-->
 
 

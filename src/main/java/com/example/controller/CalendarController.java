@@ -32,13 +32,14 @@ public class CalendarController {
 	//DB에 입력된 강사 스케쥴을 달력에 구현하는 과정
 	@RequestMapping(value = "/calendar", method = RequestMethod.GET)
 	//ModelAndView를 이용하여 구현
-	public String getCalendarList(HttpServletRequest request,Integer tId) {
+	public String getCalendarList(HttpServletRequest request, Model m, Integer vcId, Integer tId) {
 //		System.out.println("/academy/calendar");
 		String viewpage = "/lecture/calendar";
 		List<CalendarVO> calendar = null;
 		try {
 			calendar = calRepo.CalendarSearch(tId);
 			request.setAttribute("calendarList", calendar);
+			m.addAttribute("vcId", vcId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -52,10 +53,12 @@ public class CalendarController {
 	
 	//스윗알럿에 뜬 예약확인창에 예약버튼을 눌를경우 실행
 	@RequestMapping("/reservation")
-	public String reservation(Integer calId, HttpSession session) {
+	public String reservation(Integer calId, Integer vcId, HttpSession session) {
+		System.out.println("vcId : " + vcId);
 		String tempidString = (String) session.getAttribute("memIdString");
+		Integer tempidInt = (Integer) session.getAttribute("memIdInt");
 		String uuid = UUID.randomUUID().toString();
-		calRepo.reservation(calId, tempidString, uuid);
+		calRepo.reservation(calId, tempidString, uuid, vcId, tempidInt);
 		
 		// 추후에 마이페이지로 리턴값수정해야함
 		return "redirect:/mypage/lessonreserve";
