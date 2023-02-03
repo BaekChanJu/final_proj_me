@@ -232,5 +232,6 @@ public class EducationController {
       return "academy/course-details";
    }//end of getBoard
    
-
+   
+  
 }

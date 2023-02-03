@@ -92,5 +92,28 @@ public interface EducationRepository extends CrudRepository<EducationVO, Integer
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

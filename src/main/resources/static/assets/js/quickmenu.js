@@ -1,5 +1,6 @@
 
 //퀵메뉴용
+
 $(document).ready(function(){
    //스크롤이벤트
   var currentPosition = parseInt($(".quickmenu").css("top"));
